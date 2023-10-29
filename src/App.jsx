@@ -1,9 +1,12 @@
 import { useState } from 'react'
 import './App.css'
+import { BrowserRouter, BrowserRouter as Router, Route } from 'react-router-dom';
 
 function App() {
  return(
-  <h1>yahya</h1>
+  <BrowserRouter>
+    <h1>yahya</h1>
+  </BrowserRouter>
  )
 }
 
