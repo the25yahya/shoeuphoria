@@ -5,7 +5,7 @@ const StateContext = createContext();
 
 const initialState = {
     cart : false,
-    userProfile : false,
+    user : false,
 } 
 
 export const ContextProvider = ({children}) => {

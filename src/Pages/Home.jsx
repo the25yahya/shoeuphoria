@@ -1,5 +1,6 @@
 import React from 'react'
 import whites from '../assets/whites.png'
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -7,7 +8,7 @@ const Home = () => {
       <div className='mr-20 basis-2/6'>
         <h1 className='text-5xl mb-5'><span className='block mb-5'>TRENDY SHOES</span> TO LUXURY</h1>
         <p className='w-400 mb-10'>Finding your shoe has never been easier. Browse the best selection of famus fashion brand. that suit your style and preferences</p>
-        <button className='border bg-black border-transparent px-5 py-2 text-white rounded-lg transition hover:bg-transparent hover:text-black'>Check Now</button>
+        <Link to='/Products'><button className='border bg-black border-transparent px-5 py-2 text-white rounded-lg transition hover:bg-transparent hover:text-black'>Check Now</button></Link>
         <div className='flex mt-10 mb-2'>
           <div className='mr-10 flex-col'>
             <p className='text-3xl font-semibold'>80 +</p>
