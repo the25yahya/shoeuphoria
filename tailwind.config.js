@@ -12,6 +12,7 @@ export default {
         'custom-color2': '#010101',
         'custom-color3': '#edcf5d',
         'custom-color4': '#a4a4a4',
+        'custom-color5':'#383673',
       },
       width: {
         800:"800px",
