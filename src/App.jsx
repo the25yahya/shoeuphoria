@@ -3,18 +3,21 @@ import './App.css'
 import { BrowserRouter, BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react';
 import Navbar from './Components/Navbar'
+import Loader from './Components/Loader';
 import {Men, Women, Home, Brands, Products} from './pages'
+import { useStateContext } from './Contexts/ContextProvider';
 
 function App() {
+  const {loading} = useStateContext();
  return(
   <ChakraProvider>
     <BrowserRouter>
-      <div>
+      {loading ? <Loader /> : <div>
         <Navbar />
         <Routes>
           <Route path='/' element = {<Home />} />
         </Routes>
-      </div>
+      </div>}
     </BrowserRouter>
   </ChakraProvider>
  )

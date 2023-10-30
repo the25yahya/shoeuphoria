@@ -1,4 +1,4 @@
-import React, {createContext, useContext, useState} from "react"
+import React, {createContext, useContext, useState, useEffect} from "react"
 import PropTypes from "prop-types"
 
 const StateContext = createContext();
@@ -9,9 +9,23 @@ const initialState = {
 } 
 
 export const ContextProvider = ({children}) => {
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+      // Simulate a delay for loading content
+      setTimeout(() => {
+        setLoading(false);
+      }, 2500);
+    }, []);
+    /////////////////////////////////
+    const [isClicked, setIsClicked] = useState(initialState);
+    const handleClick = (clicked) => {
+        setIsClicked({...initialState, [clicked]: true})
+      }
+    
     return(
         <StateContext.Provider
-          value={{}}
+          value={{loading,setLoading,isClicked,setIsClicked,handleClick}}
         >
             {children}
         </StateContext.Provider>
