@@ -4,6 +4,9 @@ export default {
   "./src/**/*.{js,ts,jsx,tsx}",],
   theme: {
     extend: {
+      spacing: {
+        '128': '15rem', // You can define larger values here
+      },
       transform: {
       
       },
@@ -15,6 +18,22 @@ export default {
         'custom-color5':'#383673',
       },
       width: {
+        800:"800px",
+        700:"700px",
+        600:"600px",
+        500: '500px',
+        400: '400px',
+        300: '300px',
+        200: '200px',
+        250: '250px',
+        180: "180px",
+        100: '100px',
+        60: '60px',
+        50: '50px',
+        40: '40px',
+        30: '30px',
+      },
+      height: {
         800:"800px",
         700:"700px",
         600:"600px",

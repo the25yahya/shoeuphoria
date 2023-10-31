@@ -1,10 +1,13 @@
 import React from 'react'
 import whites from '../assets/whites.png'
 import { Link } from 'react-router-dom';
+import airmax2 from '../assets/airmax2.png'
+import airmax3 from '../assets/airmax3.png'
 
 const Home = () => {
   return (
-    <div className='flex justify-center mt-12'>
+   <div className='mt-12'>
+    <div className='flex justify-center'>
       <div className='mr-20 basis-2/6'>
         <h1 className='text-5xl mb-5'><span className='block mb-5'>TRENDY SHOES</span> TO LUXURY</h1>
         <p className='w-400 mb-10'>Finding your shoe has never been easier. Browse the best selection of famus fashion brand. that suit your style and preferences</p>
@@ -38,6 +41,31 @@ const Home = () => {
           />
       </div>
     </div>
+    <div className='flex justify-center items-center mt-128 pb-20'>
+      <div className='h-400 bg-zinc-200 relative w-600 overflow-hidden mr-5'>
+        <img 
+          className='w-300'
+          src={airmax2}
+        />
+        <p className='bg-orange-500 -rotate-90 absolute top-5 rounded-l-lg px-5 right-4 py-2 text-white'>NEW</p>
+        <div className='flex-col'>
+         <h1>NEW RUNNING STYLE</h1>
+          <p>NOW AVAILABLE</p>
+          <button className='border bg-black border-transparent px-5 py-2 text-white rounded-lg transition hover:bg-transparent hover:text-black'>Check Now</button>
+        </div>
+      </div>
+      <div className='flex-col'>
+        <div className='w-500 h-200 relative'>
+         <h1>SPORTS ESSENTIALS</h1>
+         <p>MOVE AND EXPLORE</p>
+         <img src={whites} className='w-100'/>
+        </div>
+        <div className='bg-orange-500 w-500 h-200'>
+
+        </div>
+      </div>
+    </div>
+    </div> 
   )
 }
 

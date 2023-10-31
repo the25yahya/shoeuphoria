@@ -12,7 +12,7 @@ function App() {
  return(
   <ChakraProvider>
     <BrowserRouter>
-      {loading ? <Loader /> : <div>
+      {loading ? <Loader /> : <div className='bg-gray-100'>
         <Navbar />
         <Routes>
           <Route path='/' element = {<Home />} />
