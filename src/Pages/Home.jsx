@@ -64,10 +64,12 @@ const Home = () => {
           <p className='text-gray-500'>MOVE AND EXPLORE</p>
          </div>
          <img src={whites} className='absolute w-300 right-3 -bottom-10'/>
+         <p className='bg-orange-500 absolute top-5 rounded-l-lg px-4 right-0 py-2 text-sm text-white'>unique</p>
         </div>
-        <div className='bg-orange-500 w-500 h-200 text-white py-5 px-8'>
+        <div className='bg-orange-500 w-500 h-200 text-white py-5 px-8 relative'>
          <h1 className='text-5xl'><spna className='block'>Get</spna> 15% Off</h1>
          <p className='font-thin mt-3 w-200'>For All products in our store or website</p>
+         <p className='bg-white -rotate-90 absolute top-6 rounded-l-lg px-5 right-4 py-2 text-orange-500 overflow-hidden font-bold'>stylish</p>
         </div>
       </div>
     </div>
