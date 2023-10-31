@@ -5,7 +5,8 @@ export default {
   theme: {
     extend: {
       spacing: {
-        '128': '15rem', // You can define larger values here
+        '128': '15rem',
+        '50' : '8rem',
       },
       transform: {
       
@@ -22,7 +23,11 @@ export default {
         700:"700px",
         600:"600px",
         500: '500px',
+        420: '420px',
+        410: '410px',
         400: '400px',
+        350: '350px',
+        320: '320px',
         300: '300px',
         200: '200px',
         250: '250px',
@@ -38,6 +43,8 @@ export default {
         700:"700px",
         600:"600px",
         500: '500px',
+        420: '420px',
+        410: '410px',
         400: '400px',
         300: '300px',
         200: '200px',
