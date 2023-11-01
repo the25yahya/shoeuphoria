@@ -6,6 +6,7 @@ import {BsChevronDown} from 'react-icons/bs'
 import {LuSettings2} from 'react-icons/lu'
 import Product from '../Components/Product';
 import shoes from '../Data/HomeProducts.json'
+import { Button } from '@chakra-ui/react';
 
 const Home = () => {
   const Products = shoes.map((item) =>{
@@ -90,7 +91,7 @@ const Home = () => {
         </div>
       </div>
     </div>
-    <div className='px-100'>
+    <div className='px-100 pb-0'>
       <h1 className='text-3xl font-thin mb-5'>Our Products</h1>
       <div className='flex justify-between items-center'>
        <div className='flex w-600 items-center'>
@@ -112,6 +113,9 @@ const Home = () => {
       </div>
       <div className='flex flex-wrap mt-10'>
         {Products}
+      </div>
+      <div className='w-full h-30 text-center'>
+      <button className='border transition text-sm border-black px-5 py-1 rounded-xl hover:border-transparent hover:bg-black hover:text-white cursor-pointer'>See full products</button>
       </div>
     </div>
     </div> 
