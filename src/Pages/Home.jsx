@@ -99,11 +99,11 @@ const Home = () => {
           <BsChevronDown />
         </div>
         <p className='mr-5 border border-transparent cursor-pointer text-sm font-semibold
-        hover:border hover:bg-blue-800 hover:text-white hover:rounded-xl px-2 py-1'>All</p>
-        <p className='mr-5 border border-transparent cursor-pointer text-sm font-semibold hover:border hover:bg-blue-800 hover:text-white hover:rounded-xl px-2 py-1'>Sneakers</p>
-        <p className='mr-5 border border-transparent cursor-pointer text-sm font-semibold hover:border hover:bg-blue-800 hover:text-white hover:rounded-xl px-2 py-1'>Sports</p>
-        <p className='mr-5 border border-transparent cursor-pointer text-sm font-semibold hover:border hover:bg-blue-800 hover:text-white hover:rounded-xl px-2 py-1'>Formal</p>
-        <p className='mr-5 border border-transparent cursor-pointer text-sm font-semibold hover:border hover:bg-blue-800 hover:text-white hover:rounded-xl px-2 py-1'>Slip-on</p>
+        hover:border hover:bg-orange-500 hover:text-white hover:rounded-xl px-2 py-1'>All</p>
+        <p className='mr-5 border border-transparent cursor-pointer text-sm font-semibold hover:border hover:bg-orange-500 hover:text-white hover:rounded-xl px-2 py-1'>Sneakers</p>
+        <p className='mr-5 border border-transparent cursor-pointer text-sm font-semibold hover:border hover:bg-orange-500 hover:text-white hover:rounded-xl px-2 py-1'>Sports</p>
+        <p className='mr-5 border border-transparent cursor-pointer text-sm font-semibold hover:border hover:bg-orange-500 hover:text-white hover:rounded-xl px-2 py-1'>Formal</p>
+        <p className='mr-5 border border-transparent cursor-pointer text-sm font-semibold hover:border hover:bg-orange-500 hover:text-white hover:rounded-xl px-2 py-1'>Slip-on</p>
        </div>
        <div className='flex items-center text-sm border border-black px-2 py-1 rounded-xl'>
         <p className='mr-2'>Filter</p>
