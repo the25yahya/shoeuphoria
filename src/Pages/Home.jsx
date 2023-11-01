@@ -2,11 +2,14 @@ import React from 'react'
 import whites from '../assets/whites.png'
 import { Link } from 'react-router-dom';
 import airmax3 from '../assets/airmax3.png'
-import {BsChevronDown} from 'react-icons/bs'
+import {BsChevronDown, BsHeadset} from 'react-icons/bs'
 import {LuSettings2} from 'react-icons/lu'
 import Product from '../Components/Product';
 import shoes from '../Data/HomeProducts.json'
 import { Button } from '@chakra-ui/react';
+import {GrPowerCycle} from 'react-icons/gr'
+import {SiFsecure} from 'react-icons/si'
+
 
 const Home = () => {
   const Products = shoes.map((item) =>{
@@ -116,6 +119,27 @@ const Home = () => {
       </div>
       <div className='w-full h-30 text-center'>
       <button className='border transition text-sm border-black px-5 py-1 rounded-xl hover:border-transparent hover:bg-black hover:text-white cursor-pointer'>See full products</button>
+      </div>
+    </div>
+    <div className='flex px-10 justify-center mt-50'>
+      <div className='mr-10'>
+       <h1 className='text-4xl mb-2'>Why trust us?</h1>
+       <p className='w-250 text-gray-500'>At our shoe store, we treat each customer with unparalleled care and attention</p>
+      </div>
+      <div className='border border-gray-400 p-4 mr-5'>
+       <span className='text-3xl'><GrPowerCycle/></span>
+       <h2 className='mt-4 text-lg font-semibold'>Free Returns</h2>
+       <p className='text-sm w-200 text-gray-600 mt-3'>Our customers can return or exchange their purchase hassle-free. with our easy to use return policy.</p>
+      </div>
+      <div className='border border-gray-400 p-4 mr-5'>
+       <span className='text-3xl'><SiFsecure/></span>
+       <h2 className='mt-4 text-lg font-semibold'>Secure Payment</h2>
+       <p className='text-sm w-200 text-gray-600 mt-3'>We offer a secure checkout process that protects our customers personal and financial information</p>
+      </div>
+      <div className='border border-gray-400 p-4 mr-5'>
+       <span className='text-3xl'><BsHeadset/></span>
+       <h2 className='mt-4 text-lg font-semibold'>customer Support</h2>
+       <p className='text-sm w-200 text-gray-600 mt-3'>Our customer support team is available to help customers with any question or concerns they may have</p>
       </div>
     </div>
     </div> 
