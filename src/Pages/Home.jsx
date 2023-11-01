@@ -118,7 +118,9 @@ const Home = () => {
         {Products}
       </div>
       <div className='w-full h-30 text-center'>
-      <button className='border transition text-sm border-black px-5 py-1 rounded-xl hover:border-transparent hover:bg-black hover:text-white cursor-pointer'>See full products</button>
+      <Link to='/products'>
+        <button className='border transition text-sm border-black px-5 py-1 rounded-xl hover:border-transparent hover:bg-black hover:text-white cursor-pointer'>See full products</button>
+      </Link>
       </div>
     </div>
     <div className='flex px-10 justify-center mt-50'>
