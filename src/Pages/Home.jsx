@@ -2,8 +2,25 @@ import React from 'react'
 import whites from '../assets/whites.png'
 import { Link } from 'react-router-dom';
 import airmax3 from '../assets/airmax3.png'
+import {BsChevronDown} from 'react-icons/bs'
+import {LuSettings2} from 'react-icons/lu'
+import Product from '../Components/Product';
+import shoes from '../Data/HomeProducts.json'
 
 const Home = () => {
+  const Products = shoes.map((item) =>{
+    return(
+      <Product 
+        img={item.img1}
+        img2={item.img2}
+        price={item.price}
+        key={item.id}
+        name={item.name}
+        brand={item.brand}
+        tag={item.tag}
+      />
+    )
+  })
   return (
    <div className='mt-12'>
     <div className='flex justify-center'>
@@ -67,10 +84,34 @@ const Home = () => {
          <p className='bg-orange-500 absolute top-5 rounded-l-lg px-4 right-0 py-2 text-sm text-white'>unique</p>
         </div>
         <div className='bg-orange-500 w-500 h-200 text-white py-5 px-8 relative'>
-         <h1 className='text-5xl'><spna className='block'>Get</spna> 15% Off</h1>
+         <h1 className='text-5xl'><span className='block'>Get</span> 15% Off</h1>
          <p className='font-thin mt-3 w-200'>For All products in our store or website</p>
          <p className='bg-white -rotate-90 absolute top-6 rounded-l-lg px-5 right-4 py-2 text-orange-500 overflow-hidden font-bold'>stylish</p>
         </div>
+      </div>
+    </div>
+    <div className='px-100'>
+      <h1 className='text-3xl font-thin mb-5'>Our Products</h1>
+      <div className='flex justify-between items-center'>
+       <div className='flex w-600 items-center'>
+        <div className='flex items-center mr-8 border border-black rounded-xl px-2 text-sm py-1'>
+          <p className='mr1'>Mens</p>
+          <BsChevronDown />
+        </div>
+        <p className='mr-5 border border-transparent cursor-pointer text-sm font-semibold
+        hover:border hover:bg-blue-800 hover:text-white hover:rounded-xl px-2 py-1'>All</p>
+        <p className='mr-5 border border-transparent cursor-pointer text-sm font-semibold hover:border hover:bg-blue-800 hover:text-white hover:rounded-xl px-2 py-1'>Sneakers</p>
+        <p className='mr-5 border border-transparent cursor-pointer text-sm font-semibold hover:border hover:bg-blue-800 hover:text-white hover:rounded-xl px-2 py-1'>Sports</p>
+        <p className='mr-5 border border-transparent cursor-pointer text-sm font-semibold hover:border hover:bg-blue-800 hover:text-white hover:rounded-xl px-2 py-1'>Formal</p>
+        <p className='mr-5 border border-transparent cursor-pointer text-sm font-semibold hover:border hover:bg-blue-800 hover:text-white hover:rounded-xl px-2 py-1'>Slip-on</p>
+       </div>
+       <div className='flex items-center text-sm border border-black px-2 py-1 rounded-xl'>
+        <p className='mr-2'>Filter</p>
+        <LuSettings2 />
+       </div>
+      </div>
+      <div className='flex flex-wrap mt-10'>
+        {Products}
       </div>
     </div>
     </div> 

@@ -6,6 +6,7 @@ export default {
     extend: {
       spacing: {
         '128': '15rem',
+        '100' : '12rem',
         '50' : '8rem',
       },
       transform: {
