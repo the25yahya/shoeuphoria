@@ -156,7 +156,7 @@ const Home = () => {
        <p className='text-sm w-200 text-gray-600 mt-3'>Our customer support team is available to help customers with any question or concerns they may have</p>
       </div>
     </div>
-    <div className='mt-20 px-50'>
+    <div className='mt-50 px-50'>
       <h1 className='text-4xl font-thin m-3'>See What Our Clients Have To Say!</h1>
       <p className='m-5 mt-0 text-gray500'>check out our shoes and find your perfect pair today!</p>
       <div className='w-full flex'>

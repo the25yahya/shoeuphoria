@@ -6,6 +6,7 @@ import Navbar from './Components/Navbar'
 import Loader from './Components/Loader';
 import {Men, Women, Home, Brands, Products} from './pages'
 import { useStateContext } from './Contexts/ContextProvider';
+import Footer from './Components/Footer';
 
 function App() {
   const {loading} = useStateContext();
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path='/' element = {<Home />} />
         </Routes>
+        <Footer />
       </div>}
     </BrowserRouter>
   </ChakraProvider>
