@@ -2,7 +2,7 @@ import React from 'react'
 
 const Toggle = () => {
   return (
-    <div className='toggle'>
+    <div className='toggle lg:hidden'>
     <input type="checkbox" id="checkbox"/>
     <label htmlFor="checkbox" className="toggle">
         <div className="bars" id="bar1"></div>
