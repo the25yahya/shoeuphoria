@@ -1,0 +1,21 @@
+[
+    {
+        "user":"https://images.unsplash.com/photo-1633332755192-727a05c4013d?auto=format&fit=crop&q=80&w=1000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnN8ZW58MHx8MHx8fDA%3D",
+        "userName":"Benjamin Mitchell",
+        "userOcupation":"Math Teacher",
+        "reviewContent":"I absolutely love shopping at this shoe store! The selection is fantastic, and the staff is incredibly helpful. I always find the perfect pair of shoes, and the quality is top-notch. Highly recommended!"
+    },
+    {
+        "user":"https://www.electricallicenserenewal.com/app-assets/images/user/12.jpg",
+        "userName":"Olivia Sinclair",
+        "userOcupation":"Nurse",
+        "reviewContent":"I had the best shoe shopping experience here. The store is well-organized, making it easy to find what I was looking for. The prices are reasonable, and I left with a stylish and comfortable pair of shoes. Can't wait to go back for my next shopping spree!"
+    },
+    {
+        "user":"https://images.ctfassets.net/lh3zuq09vnm2/yBDals8aU8RWtb0xLnPkI/19b391bda8f43e16e64d40b55561e5cd/How_tracking_user_behavior_on_your_website_can_improve_customer_experience.png",
+        "userName":"Samuel Anderson",
+        "userOcupation":"Financial Analyst",
+        "reviewContent":"This shoe store is a hidden gem! I stumbled upon it recently, and I'm so glad I did. They have a great range of styles and sizes, and the customer service is outstanding. I've found unique and beautiful shoes here that I couldn't find anywhere else."
+    }
+
+]

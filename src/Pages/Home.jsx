@@ -9,7 +9,8 @@ import shoes from '../Data/HomeProducts.json'
 import { Button } from '@chakra-ui/react';
 import {GrPowerCycle} from 'react-icons/gr'
 import {SiFsecure} from 'react-icons/si'
-
+import Review from '../Components/Review';
+import Reviews from '../Data/Reviews.json'
 
 const Home = () => {
   const Products = shoes.map((item) =>{
@@ -22,6 +23,17 @@ const Home = () => {
         name={item.name}
         brand={item.brand}
         tag={item.tag}
+      />
+    )
+  })
+  const ClientsReviews = Reviews.map((item) =>{
+    return(
+      <Review 
+      user={item.user}
+      key={item.userName}
+      userName={item.userName}
+      userOcupation={item.userOcupation}
+      reviewContent={item.reviewContent}
       />
     )
   })
@@ -142,6 +154,13 @@ const Home = () => {
        <span className='text-3xl'><BsHeadset/></span>
        <h2 className='mt-4 text-lg font-semibold'>customer Support</h2>
        <p className='text-sm w-200 text-gray-600 mt-3'>Our customer support team is available to help customers with any question or concerns they may have</p>
+      </div>
+    </div>
+    <div className='mt-20 px-50'>
+      <h1 className='text-4xl font-thin m-3'>See What Our Clients Have To Say!</h1>
+      <p className='m-5 mt-0 text-gray500'>check out our shoes and find your perfect pair today!</p>
+      <div className='w-full flex'>
+        {ClientsReviews}
       </div>
     </div>
     </div> 
