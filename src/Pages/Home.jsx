@@ -77,8 +77,8 @@ const Home = () => {
      <h1 className='text-5xl w-400 font-bold'>New Style For latest Collections</h1>
      <p className='pl-20 w-500 font-semibold opacity-70'>Discover our latest collection of clothing, shoes, and accessories that are perfect for any occasion, From casual wear to formal attire, we have everything you need to revamp your wardrobe and stay on trend</p>
     </div>
-    <div className='flex justify-center items-center pb-20'>
-      <div className='h-420 bg-gray-200 relative w-500 overflow-hidden mr-5'>
+    <div className='flex justify-center items-center pb-20 section4'>
+      <div className='h-420 bg-gray-200 relative w-500 overflow-hidden mr-5 banner1'>
         <img 
           className='w-320 absolute -bottom-5 -right-2 transform scale-x-[-1]'
           src={airmax3}
@@ -91,7 +91,7 @@ const Home = () => {
         </div>
       </div>
       <div className='flex-col'>
-        <div className='bg-gray-200 w-500 h-200 relative mb-5'>
+        <div className='bg-gray-200 w-500 h-200 relative mb-5 banner2'>
          <div className='px-8 py-10'>
           <h1 className='w-250 text-4xl mb-5 font-thin'>SPORTS ESSENTIALS</h1>
           <p className='text-gray-500'>MOVE AND EXPLORE</p>
@@ -99,7 +99,7 @@ const Home = () => {
          <img src={whites} className='absolute w-300 right-3 -bottom-10'/>
          <p className='bg-orange-500 absolute top-5 rounded-l-lg px-4 right-0 py-2 text-sm text-white'>unique</p>
         </div>
-        <div className='bg-orange-500 w-500 h-200 text-white py-5 px-8 relative'>
+        <div className='bg-orange-500 w-500 h-200 text-white py-5 px-8 relative banner3'>
          <h1 className='text-5xl'><span className='block'>Get</span> 15% Off</h1>
          <p className='font-thin mt-3 w-200'>For All products in our store or website</p>
          <p className='bg-white -rotate-90 absolute top-6 rounded-l-lg px-5 right-4 py-2 text-orange-500 overflow-hidden font-bold'>stylish</p>
