@@ -6,16 +6,17 @@ import { Tooltip } from '@chakra-ui/react';
 import { useStateContext } from '../Contexts/ContextProvider';
 import Cart from './Cart'
 import User from './User'
+import Toggle from './Toggle';
 
 const Navbar = () => {
   //nav cotext state
   const {isClicked,setIsClicked,handleClick} = useStateContext();
   return (
-    <nav className='flex justify-around p-10 px-20 items-center'>
+    <nav className='flex justify-around p-10 px-20 items-center md:justify-between sm:justify-between'>
      {isClicked.cart && <Cart />}
      {isClicked.user && <User />}
      <Link to='/'><p className='font-semibold text-xl cursor-pointer'>SHOE<span className='text-orange-500'>UPHORIA</span></p></Link>
-     <div className='flex items-center font-semibold'>
+     <div className='flex items-center font-semibold md'>
      <Link to='/'><p className='pr-8 hover:text-orange-500 cursor-pointer transition'>Home</p></Link>
       <Link to='/Men'><p className='pr-8 hover:text-orange-500 cursor-pointer transition'>Men</p></Link>
       <Link to='/Women'><p className='pr-8 hover:text-orange-500 cursor-pointer transition'>Women</p></Link>
@@ -36,6 +37,9 @@ const Navbar = () => {
           <FaUserAlt />
         </div>
        </Tooltip>
+     </div>
+     <div>
+      <Toggle />
      </div>
     </nav>
   )

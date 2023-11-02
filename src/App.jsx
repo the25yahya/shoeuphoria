@@ -7,6 +7,7 @@ import Loader from './Components/Loader';
 import {Men, Women, Home, Brands, Products} from './pages'
 import { useStateContext } from './Contexts/ContextProvider';
 import Footer from './Components/Footer';
+import './media.css'
 
 function App() {
   const {loading} = useStateContext();
