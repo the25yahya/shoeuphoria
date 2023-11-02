@@ -73,7 +73,7 @@ const Home = () => {
           />
       </div>
     </div>
-    <div className='mt-50 mb-20 flex justify-center'>
+    <div className='mt-50 mb-20 flex justify-center section2'>
      <h1 className='text-5xl w-400 font-bold'>New Style For latest Collections</h1>
      <p className='pl-20 w-500 font-semibold opacity-70'>Discover our latest collection of clothing, shoes, and accessories that are perfect for any occasion, From casual wear to formal attire, we have everything you need to revamp your wardrobe and stay on trend</p>
     </div>
