@@ -106,11 +106,11 @@ const Home = () => {
         </div>
       </div>
     </div>
-    <div className='px-100 pb-0'>
+    <div className='px-10 pb-0 section5 lg:px-50'>
       <h1 className='text-3xl font-thin mb-5'>Our Products</h1>
       <div className='flex justify-between items-center'>
        <div className='flex w-600 items-center'>
-        <div className='flex items-center mr-8 border border-black rounded-xl px-2 text-sm py-1'>
+        <div id='mens' className='flex items-center mr-8 border border-black rounded-xl px-2 text-sm py-1'>
           <p className='mr1'>Mens</p>
           <BsChevronDown />
         </div>
@@ -121,12 +121,12 @@ const Home = () => {
         <p className='mr-5 border border-transparent cursor-pointer text-sm font-semibold hover:border hover:bg-orange-500 hover:text-white hover:rounded-xl px-2 py-1'>Formal</p>
         <p className='mr-5 border border-transparent cursor-pointer text-sm font-semibold hover:border hover:bg-orange-500 hover:text-white hover:rounded-xl px-2 py-1'>Slip-on</p>
        </div>
-       <div className='flex items-center text-sm border border-black px-2 py-1 rounded-xl'>
+       <div id='filter' className='flex items-center text-sm border border-black px-2 py-1 rounded-xl'>
         <p className='mr-2'>Filter</p>
         <LuSettings2 />
        </div>
       </div>
-      <div className='flex flex-wrap mt-10'>
+      <div className='flex w-full mt-10 productsHome'>
         {Products}
       </div>
       <div className='w-full h-30 text-center'>
@@ -135,31 +135,31 @@ const Home = () => {
       </Link>
       </div>
     </div>
-    <div className='flex px-10 justify-center mt-50'>
-      <div className='mr-10'>
+    <div className='flex px-10 justify-center mt-50 flex-wrap items-center'>
+      <div className='ml-5'>
        <h1 className='text-4xl mb-2'>Why trust us?</h1>
        <p className='w-250 text-gray-500'>At our shoe store, we treat each customer with unparalleled care and attention</p>
       </div>
-      <div className='border border-gray-400 p-4 mr-5'>
+      <div className='border border-gray-400 p-4 m-5 rounded-lg'>
        <span className='text-3xl'><GrPowerCycle/></span>
        <h2 className='mt-4 text-lg font-semibold'>Free Returns</h2>
        <p className='text-sm w-200 text-gray-600 mt-3'>Our customers can return or exchange their purchase hassle-free. with our easy to use return policy.</p>
       </div>
-      <div className='border border-gray-400 p-4 mr-5'>
+      <div className='border border-gray-400 p-4 m-5 h-200 rounded-lg'>
        <span className='text-3xl'><SiFsecure/></span>
        <h2 className='mt-4 text-lg font-semibold'>Secure Payment</h2>
        <p className='text-sm w-200 text-gray-600 mt-3'>We offer a secure checkout process that protects our customers personal and financial information</p>
       </div>
-      <div className='border border-gray-400 p-4 mr-5'>
+      <div className='border border-gray-400 p-4 m-5 rounded-lg'>
        <span className='text-3xl'><BsHeadset/></span>
        <h2 className='mt-4 text-lg font-semibold'>customer Support</h2>
        <p className='text-sm w-200 text-gray-600 mt-3'>Our customer support team is available to help customers with any question or concerns they may have</p>
       </div>
     </div>
-    <div className='mt-50 px-50'>
-      <h1 className='text-4xl font-thin m-3'>See What Our Clients Have To Say!</h1>
+    <div className='mt-50 px-0 sm:px-10 lg:px-50'>
+      <h1 className='text-3xl font-thin m-3'>See What Our Clients Have To Say!</h1>
       <p className='m-5 mt-0 text-gray500'>check out our shoes and find your perfect pair today!</p>
-      <div className='w-full flex'>
+      <div className='w-full flex flex-wrap'>
         {ClientsReviews}
       </div>
     </div>

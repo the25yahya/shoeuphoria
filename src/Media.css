@@ -1,3 +1,9 @@
+@media screen and (max-width: 1336px){
+    /*section5*/
+    .product .bag{
+        top: 85%;
+    }
+  }
 @media screen and (max-width: 1029px) {
     .md{
         display: none;
@@ -32,6 +38,17 @@
         margin: 0px;
         margin-bottom: 20px;
     }
+  }
+  @media screen and (max-width:1100px) {
+            /*footer*/
+            footer .footer2{
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer2 div{
+                margin: 0px;
+                margin-bottom: 30px;
+            }
   }
   @media screen and (max-width: 990px) {
     .hero .hero1{
@@ -142,8 +159,16 @@
     .section4 .banner3{
         width: 550px;
     }
+    /*section5=====================*/
+    .productsHome{
+        flex-wrap: wrap;
+    }
   }
-
+  @media screen and (max-width: 750px){
+    .productsHome{
+        padding-left: 20%;
+    }
+  }
   @media screen and (max-width: 640px){
     .hero .hero1 .intro{
         font-size: 50px;
@@ -180,6 +205,21 @@
             width: 450px;
             height: 200px;
         }
+        /*sectipn5*/
+        #mens{
+            display: none;
+        }
+        #filter{
+            display: none;
+        }
+        /*footer===========*/
+        footer .email{
+            flex-direction: column;
+            margin-bottom: 50px;
+        }
+        footer .email div{
+            margin-bottom:20px;
+        }
   }
 
   @media screen and (max-width: 500px){
@@ -201,6 +241,33 @@
     .hero .hero1 .intro3{
         margin-left: 25%;
     }
+
+/*section4===========================*/
+        .section4 .banner1{
+            width: 400px;
+            height: 250px;
+        }
+        .section4 .banner1 p{
+            margin-bottom: 10px;
+        }
+        .section4 .banner1 h1{
+            width: 280px;
+        }
+        .section4 .banner1 img{
+            width: 210px;
+            bottom: -50px;
+        }
+        .section4 .banner2{
+            width: 400px;
+            height: 250px;
+        }
+        .section4 .banner2 h1{
+            font-size: 30px;
+        }
+        .section4 .banner3{
+            width: 400px;
+            height: 200px;
+        }
   }
   /* min width ------------------------------------------------------------------------------------------------------*/
   @media screen and (min-width: 1029px) {

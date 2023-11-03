@@ -7,7 +7,7 @@ import Email from './Email'
 const Footer = () => {
   return (
     <footer className='flex-col mt-100 border-t pt-20 pb-2'>
-        <div className='flex w-full justify-around items-center section'>
+        <div className='flex text-center w-full justify-around items-center email section'>
             <div>
                 <p className='font-bold text-xl'>Join our newsletter</p>
                 <p className='opacity-60 text-sm font-bold'>well send you a nice letter once per week. No spam</p>
@@ -16,13 +16,13 @@ const Footer = () => {
              <Email/>
             </div>
         </div>
-        <div className='flex w-full justify-start items-center section'>
-           <div className='ml-100 mr-20'> 
-            <div className='flex items-center mb-5'>
+        <div className='flex justify-start items-center section footer2 ml-10 mr-20 lg:ml-50'>
+           <div className='mr-50'> 
+              <span className='flex items-center mb-2 ml-12'>
                 <img className='w-8' src={eagle}/>
                 <p className='ml-2 text-orange-500 font-bold'><span className='text-black'>Shoe</span>uphoria</p>
-            </div>
-            <p className='w-300 font-bold text-sm'>this shoe store offers a diverse collection of stylish, comfortable, and quality shoes for every occasion.</p>
+             </span>
+             <p className='w-300 font-bold text-sm'>this shoe store offers a diverse collection of stylish, comfortable, and quality shoes for every occasion.</p>
            </div>
            <div className='mr-10 footerdiv'>
              <h2 className='font-bold text-lg'>Products</h2>
@@ -55,7 +55,7 @@ const Footer = () => {
              <p>Cookies</p>
            </div>
         </div>
-        <div className='flex w-full justify-between items-center section px-50'>
+        <div className='flex text-center w-full justify-between items-center section px-0 lg:px-50'>
             <p className='flex items-center font-semibold'><span className='mr-1'><AiOutlineCopyrightCircle/></span> Unititled UI. All rights reserved.</p>
             <div className='flex items-center media'>
                 <p><BsTwitter/></p>
