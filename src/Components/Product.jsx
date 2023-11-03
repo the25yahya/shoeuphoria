@@ -10,7 +10,7 @@ const Product = (props) => {
     setImgSrc(props.img);
   }
   return (
-    <div className='flex-col relative w-300 h-410 mr-8 product'>
+    <div className='flex-col relative w-300 h-410 mr-5 product'>
         <div className='relative'><img
         className='w-300 cursor-pointer' 
             src={imgSrc}

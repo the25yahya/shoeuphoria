@@ -3,7 +3,7 @@ import {BiSolidCommentCheck} from 'react-icons/bi'
 
 const Review = (props) => {
   return (
-    <div className='w-350 h-250 border border-gray-400 py-4 px-5 mx-5 flex-col items-start justify-between rounded-lg mb-10'>
+    <div className='w-350 h-250 border border-gray-400 py-4 px-5 mx-2 flex-col items-start justify-between rounded-lg mb-10'>
         <div className='text-3xl'><BiSolidCommentCheck /></div>
         <p className='w-300 font-bold text-sm my-3'>{props.reviewContent}</p>
         <div className='flex items-center'>
