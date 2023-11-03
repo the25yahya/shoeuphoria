@@ -12,7 +12,7 @@ const Navbar = () => {
   //nav cotext state
   const {isClicked,setIsClicked,handleClick} = useStateContext();
   return (
-    <nav className='flex justify-around p-10 px-0 items-center lg:px-20'>
+    <nav className='flex justify-around p-10 px-0 items-center lg:px-50'>
      {isClicked.cart && <Cart />}
      {isClicked.user && <User />}
      <Link to='/'><p className='font-semibold text-xl cursor-pointer'>SHOE<span className='text-orange-500'>UPHORIA</span></p></Link>
