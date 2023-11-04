@@ -1,4 +1,4 @@
-import React from 'react'
+import {React, useState, useEffect} from 'react'
 import AllProducts from '../Data/AllProducts.json'
 import Product from '../Components/Product'
 import {LuSettings2} from 'react-icons/lu'
@@ -6,6 +6,7 @@ import {AiFillCaretDown} from 'react-icons/ai'
 import {BiChevronRight,BiChevronLeft} from 'react-icons/bi'
 import { useStateContext } from '../Contexts/ContextProvider'
 import CheckboxExample from '../Components/CheckBox'
+import RotatingBanner from '../Components/Banner'
 
 const Products = () => {
   //context
@@ -33,13 +34,8 @@ const Products = () => {
   })
   return (
     <div className='w-full flex-col fade-in'>
-      <div className='bg-gray-200 w-full flex py-5 justify-center items-center border-b border-black mb-10'>
-       <p className='mr-2'><BiChevronLeft/></p>
-       <p className='mr-5 text-xl'>Members : Free shipping on orders 50$+</p>
-       <p className='underline text-sm cursor-pointer'>Join Now</p>
-       <p className='ml-2'><BiChevronRight /></p>
-      </div>
-      <div className='w-full flex items-start justify-between px-12'>
+      <RotatingBanner />
+      <div className='filter-parent w-full flex items-center justify-between px-12 md:items-start'>
         <h2 className='text-2xl'>All Sneakers (110)</h2>
         <div className='flex items-center mr-5 relative'>
           <p
@@ -57,8 +53,8 @@ const Products = () => {
           </div>
         </div>
       </div>
-      <div className='mt-10 flex relative'>
-        <div className={`flex-col mx-10 border-t border-gray-300 pt-2 ${activeMenu ? '' : 'hidden'}`}>
+      <div className='mt-10 flex relative products-parent'>
+        <div className={`slide-left flex-col mx-10 border-t border-gray-300 pt-2 ${activeMenu ? '' : 'hidden'}`}>
          <div className='flex-col w-200 filter1'>
            <p>Lifestyle</p>
            <p>Running</p>
@@ -68,7 +64,7 @@ const Products = () => {
            <p>Basketball</p>
          </div>
          <div className='mt-3 flex-col border-t border-gray-300     pt-2'>
-          <div className='flex items-center'>
+          <div className='flex items-center cursor-pointer'>
             <p className='mr-50 font-semibold'>Gender</p>
             <p><AiFillCaretDown /></p>
           </div>
@@ -88,7 +84,7 @@ const Products = () => {
            </div>
          </div>
          <div className='flex-col border-t border-gray-300 mt-5 pt-2'>
-           <div className='flex items-center'>
+           <div className='flex items-center cursor-pointer'>
              <p className='mr-50 font-semibold'>Price</p>
              <p className='ml-4'><AiFillCaretDown /></p>
            </div>
@@ -111,8 +107,48 @@ const Products = () => {
            </div>
            </div>
          </div>
+         <div className='flex-col border-t border-gray-300 mt-5 pt-2'>
+           <div className='flex items-center cursor-pointer'>
+             <p className='mr-50 font-semibold'>Brands</p>
+             <p><AiFillCaretDown /></p>
+           </div>
+           <div className='hidden'>
+           <div className='flex items-center mt-5'>
+             <CheckboxExample/>
+             <p>Nike</p>
+           </div>
+           <div className='flex items-center mt-2'>
+             <CheckboxExample/>
+             <p>Jordan</p>
+           </div>
+           <div className='flex items-center mt-2'>
+             <CheckboxExample />
+             <p>Reebok</p>
+           </div>
+           </div>
+         </div>
+         <div className='flex-col border-t border-gray-300 mt-5 pt-2'>
+          <div className='flex items-center cursor-pointer'>
+            <p className='mr-50 font-semibold'>Shoe Feel</p>
+            <p><AiFillCaretDown /></p>
+          </div>
+          <div className='flex-col hidden'>
+           <div className='flex items-center mt-4 mb-2'>
+            <CheckboxExample/>
+            <p>Agile & Flexible</p>
+           </div>
+           <div className='flex items-center mb-2'>
+            <CheckboxExample/>
+            <p>Springy & Neutral</p>
+           </div>
+           <div className='flex items-center'>
+            <CheckboxExample/>
+            <p>Cushionned & Supportive</p>
+           </div>
+           </div>
+         </div>
         </div>
-        <div className='flex flex-wrap mx-8'>
+        <div className='shoes flex flex-wrap mx-8'>
           {Products}
         </div>
       </div>

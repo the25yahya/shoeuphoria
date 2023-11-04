@@ -220,6 +220,24 @@
         footer .email div{
             margin-bottom:20px;
         }
+        /*filter*/
+        .filter-parent{
+            flex-direction: column;
+            text-align: center;
+        }
+        .filter-parent h2{
+            margin-bottom: 15px;
+        }
+        .products-parent{
+            flex-direction: column;
+            align-items: center;
+        }
+        .shoes{
+            margin: 50px;
+        }
+        .commer{
+            font-size: 17px;
+        }
   }
 
   @media screen and (max-width: 500px){
