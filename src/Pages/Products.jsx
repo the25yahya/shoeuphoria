@@ -5,6 +5,7 @@ import {LuSettings2} from 'react-icons/lu'
 import {AiFillCaretDown} from 'react-icons/ai'
 import {BiChevronRight,BiChevronLeft} from 'react-icons/bi'
 import { useStateContext } from '../Contexts/ContextProvider'
+import CheckboxExample from '../Components/CheckBox'
 
 const Products = () => {
   //context
@@ -31,7 +32,7 @@ const Products = () => {
     )
   })
   return (
-    <div className='w-full flex-col'>
+    <div className='w-full flex-col fade-in'>
       <div className='bg-gray-200 w-full flex py-5 justify-center items-center border-b border-black mb-10'>
        <p className='mr-2'><BiChevronLeft/></p>
        <p className='mr-5 text-xl'>Members : Free shipping on orders 50$+</p>
@@ -56,11 +57,59 @@ const Products = () => {
           </div>
         </div>
       </div>
-      <div className='mt-10  flex'>
-        <div className={`flex-col mx-10 border ${activeMenu ? '' : 'hidden'}`}>
-         <div className='flex-col w-200 font-semibold'>
-           <p>Nike</p>
-           <p>Reebok</p>
+      <div className='mt-10 flex relative'>
+        <div className={`flex-col mx-10 border-t border-gray-300 pt-2 ${activeMenu ? '' : 'hidden'}`}>
+         <div className='flex-col w-200 filter1'>
+           <p>Lifestyle</p>
+           <p>Running</p>
+           <p>Training & Gym</p>
+           <p>Shoes 100$ & Under</p>
+           <p>Walking</p>
+           <p>Basketball</p>
+         </div>
+         <div className='mt-3 flex-col border-t border-gray-300     pt-2'>
+          <div className='flex items-center'>
+            <p className='mr-50 font-semibold'>Gender</p>
+            <p><AiFillCaretDown /></p>
+          </div>
+          <div className='flex-col hidden'>
+           <div className='flex items-center mt-4 mb-1'>
+            <CheckboxExample/>
+            <p>Men</p>
+           </div>
+           <div className='flex items-center mb-1'>
+            <CheckboxExample/>
+            <p>Women</p>
+           </div>
+           <div className='flex items-center'>
+            <CheckboxExample/>
+            <p>Unisex</p>
+           </div>
+           </div>
+         </div>
+         <div className='flex-col border-t border-gray-300 mt-5 pt-2'>
+           <div className='flex items-center'>
+             <p className='mr-50 font-semibold'>Price</p>
+             <p className='ml-4'><AiFillCaretDown /></p>
+           </div>
+           <div className='flex-col hidden'>
+            <div className='flex items-center mt-5'>
+             <CheckboxExample/>
+             <p>$25-$50</p>
+            </div>
+            <div className='flex items-center mt-2'>
+             <CheckboxExample/>
+             <p>$50-$100</p>
+            </div>
+            <div className='flex items-center mt-2'>
+             <CheckboxExample/>
+             <p>$100-$150</p>
+            </div>
+           <div className='flex items-center mt-2'>
+            <CheckboxExample/>
+            <p>Over $150</p>
+           </div>
+           </div>
          </div>
         </div>
         <div className='flex flex-wrap mx-8'>

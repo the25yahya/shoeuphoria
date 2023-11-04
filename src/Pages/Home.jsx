@@ -38,7 +38,7 @@ const Home = () => {
     )
   })
   return (
-   <div className='mt-12'>
+   <div className='mt-12 fade-in'>
     <div className='flex justify-center hero'>
       <div className='mr-20 basis-2/6 hero1'>
         <h1 className='text-5xl mb-5 intro'><span className='block mb-5'>TRENDY SHOES</span> TO LUXURY</h1>
