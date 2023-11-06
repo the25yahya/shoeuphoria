@@ -3,17 +3,37 @@ import AllProducts from '../Data/AllProducts.json'
 import Product from '../Components/Product'
 import {LuSettings2} from 'react-icons/lu'
 import {AiFillCaretDown} from 'react-icons/ai'
+import {AiFillCaretUp} from 'react-icons/ai'
 import {BiChevronRight,BiChevronLeft} from 'react-icons/bi'
 import { useStateContext } from '../Contexts/ContextProvider'
 import CheckboxExample from '../Components/CheckBox'
 import RotatingBanner from '../Components/Banner'
+import { colorChannel } from '@mui/system'
 
 const Products = () => {
   //context
-  const {activeMenu,setActiveMenu,sortBy,setSortBy} = useStateContext();
+  const {activeMenu,setActiveMenu,sortBy,setSortBy,gender,price,brands,shoeFeel,bestFor,color,setActiveBestFor,setActiveGender,setActivePrice,setActiveBrands,setActiveShoeFeel,setActiveColor} = useStateContext();
   
   const toggleMenu = () => {
     setActiveMenu(!activeMenu);
+  };
+  const toggleGender = () => {
+    setActiveGender(!gender);
+  };
+  const togglePrice = () => {
+    setActivePrice(!price);
+  };
+  const toggleBrands = () => {
+    setActiveBrands(!brands);
+  };
+  const toggleShoeFeel = () => {
+    setActiveShoeFeel(!shoeFeel);
+  };
+  const toggleBestFor = () => {
+    setActiveBestFor(!bestFor);
+  };
+  const toggleColor = () => {
+    setActiveColor(!color);
   };
   const toggleSortBy = () =>{
     setSortBy(!sortBy)
@@ -64,11 +84,11 @@ const Products = () => {
            <p>Basketball</p>
          </div>
          <div className='mt-3 flex-col border-t border-gray-300     pt-2'>
-          <div className='flex items-center cursor-pointer'>
+          <div onClick={toggleGender} className='flex items-center cursor-pointer'>
             <p className='mr-50 font-semibold'>Gender</p>
-            <p><AiFillCaretDown /></p>
+            <p>{gender ? <AiFillCaretUp /> : <AiFillCaretDown />}</p>
           </div>
-          <div className='flex-col hidden'>
+          <div className={`flex-col ${gender ? '' : 'hidden'}`}>
            <div className='flex items-center mt-4 mb-1'>
             <CheckboxExample/>
             <p>Men</p>
@@ -84,11 +104,11 @@ const Products = () => {
            </div>
          </div>
          <div className='flex-col border-t border-gray-300 mt-5 pt-2'>
-           <div className='flex items-center cursor-pointer'>
+           <div onClick={togglePrice} className='flex items-center cursor-pointer'>
              <p className='mr-50 font-semibold'>Price</p>
-             <p className='ml-4'><AiFillCaretDown /></p>
+             <p className='ml-4'>{price ? <AiFillCaretUp /> : <AiFillCaretDown />}</p>
            </div>
-           <div className='flex-col hidden'>
+           <div className={`flex-col ${price ? '' : 'hidden' }`}>
             <div className='flex items-center mt-5'>
              <CheckboxExample/>
              <p>$25-$50</p>
@@ -108,11 +128,11 @@ const Products = () => {
            </div>
          </div>
          <div className='flex-col border-t border-gray-300 mt-5 pt-2'>
-           <div className='flex items-center cursor-pointer'>
+           <div onClick={toggleBrands} className='flex items-center cursor-pointer'>
              <p className='mr-50 font-semibold'>Brands</p>
-             <p><AiFillCaretDown /></p>
+             <p>{brands ? <AiFillCaretUp /> : <AiFillCaretDown />}</p>
            </div>
-           <div className='hidden'>
+           <div className={`flex-col ${brands ? '' : 'hidden'}`}>
            <div className='flex items-center mt-5'>
              <CheckboxExample/>
              <p>Nike</p>
@@ -128,11 +148,11 @@ const Products = () => {
            </div>
          </div>
          <div className='flex-col border-t border-gray-300 mt-5 pt-2'>
-          <div className='flex items-center cursor-pointer'>
+          <div onClick={toggleShoeFeel} className='flex items-center cursor-pointer'>
             <p className='mr-50 font-semibold'>Shoe Feel</p>
-            <p><AiFillCaretDown /></p>
+            <p>{shoeFeel ? <AiFillCaretUp /> : <AiFillCaretDown />}</p>
           </div>
-          <div className='flex-col hidden'>
+          <div className={`flex-col ${shoeFeel ? '' : 'hidden'}`}>
            <div className='flex items-center mt-4 mb-2'>
             <CheckboxExample/>
             <p>Agile & Flexible</p>
@@ -145,6 +165,90 @@ const Products = () => {
             <CheckboxExample/>
             <p>Cushionned & Supportive</p>
            </div>
+           </div>
+         </div>
+         <div className='flex-col border-t border-gray-300 mt-5 pt-2'>
+          <div onClick={toggleBestFor} className='flex items-center cursor-pointer'>
+            <p className='mr-50 font-semibold'>Best For</p>
+            <p>{bestFor ? <AiFillCaretUp /> : <AiFillCaretDown />}</p>
+          </div>
+          <div className={`flex-col ${bestFor ? '' : 'hidden'}`}>
+           <div className='flex items-center mt-4 mb-2'>
+            <CheckboxExample/>
+            <p>Cold Weather</p>
+           </div>
+           <div className='flex items-center mb-2'>
+            <CheckboxExample/>
+            <p>Dry Weather Conditions</p>
+           </div>
+           <div className='flex items-center'>
+            <CheckboxExample/>
+            <p>Wet Weather Conditions</p>
+           </div>
+           </div>
+         </div>
+         <div className='flex-col border-t border-gray-300 mt-5 pt-2'>
+           <div onClick={toggleColor} className='flex items-center cursor-pointer'>
+              <p className='mr-50 font-semibold'>Color</p>
+              <p>{color ? <AiFillCaretUp /> : <AiFillCaretDown />}</p>
+           </div>
+           <div className={`flex-col  mt-5 ${color ? '' : 'hidden'}`}>
+            <div className='flex justify-between'>
+             <div className='flex-col items-center'>
+              <div className='w-8 h-8 bg-black rounded-full'></div>
+              <span>Black</span>
+             </div>
+             <div className='flex-col items-center'>
+              <div className='w-8 h-8 bg-blue-500 rounded-full'></div>
+              <span>Blue</span>
+             </div>
+             <div className='flex-col items-center'>
+              <div className='w-8 h-8 bg-yellow-900 rounded-full'></div>
+              <span>Brown</span>
+             </div>
+            </div>
+            <div className='flex justify-between mt-5'>
+             <div className='flex-col items-center'>
+               <div className='w-8 h-8 bg-green-500 rounded-full'></div>
+               <span>Green</span>
+              </div>
+              <div className='flex-col items-center'>
+               <div className='w-8 h-8 bg-gray-500 rounded-full'></div>
+               <span>Gray</span>
+              </div>
+              <div className='flex-col items-center'>
+               <div className='w-8 h-8 bg-gradient-to-r from-blue-200 to-purple-500 rounded-full'></div>
+               <span>Multi</span>
+              </div> 
+            </div>
+            <div className='flex justify-between mt-5'>
+              <div className='flex-col items-center'>
+               <div className='w-8 h-8 bg-pink-500 rounded-full'></div>
+               <span>Pink</span>
+              </div>
+              <div className='flex-col items-center'>
+               <div className='w-8 h-8 bg-orange-500 rounded-full'></div>
+               <span>Orange</span>
+              </div>
+              <div className='flex-col items-center'>
+               <div className='w-8 h-8 bg-purple-500 rounded-full'></div>
+               <span>Purple</span>
+              </div> 
+            </div>
+            <div className='flex justify-between mt-5'>
+             <div className='flex-col items-center'>
+               <div className='w-8 h-8 bg-white rounded-full'></div>
+               <span>White</span>
+              </div>
+              <div className='flex-col items-center'>
+               <div className='w-8 h-8 bg-red-600 rounded-full'></div>
+               <span>Red</span>
+              </div>
+              <div className='flex-col items-center'>
+               <div className='w-8 h-8 bg-yellow-500 rounded-full'></div>
+               <span>Yellow</span>
+              </div>
+            </div>
            </div>
          </div>
         </div>

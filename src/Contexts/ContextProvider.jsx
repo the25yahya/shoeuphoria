@@ -7,6 +7,16 @@ const initialState = {
     cart : false,
     user : false,
 } 
+const initialFilterState = {
+  type: '',
+  gender: '',
+  brand: '',
+  color: '',
+  size: '',
+  price: 0,
+  shoeFeel: '',
+  bestFor:'',
+};
 
 export const ContextProvider = ({children}) => {
     const [loading, setLoading] = useState(true);
@@ -18,6 +28,12 @@ export const ContextProvider = ({children}) => {
       }, 2500);
     }, []);
     /////////////////////////////////
+    const [gender, setActiveGender] = useState(false);
+    const [price, setActivePrice] = useState(false);
+    const [brands, setActiveBrands] = useState(false);
+    const [shoeFeel, setActiveShoeFeel] = useState(false);
+    const [bestFor, setActiveBestFor] = useState(false);
+    const [color, setActiveColor] = useState(false);
     const [activeMenu, setActiveMenu] = useState(false);
     const [isClicked, setIsClicked] = useState(initialState);
     const [sortBy, setSortBy] = useState(false);
@@ -27,7 +43,7 @@ export const ContextProvider = ({children}) => {
     
     return(
         <StateContext.Provider
-          value={{loading,setLoading,isClicked,setIsClicked,handleClick,activeMenu,setActiveMenu,sortBy,setSortBy}}
+          value={{loading,setLoading,isClicked,setIsClicked,handleClick,activeMenu,setActiveMenu,sortBy,setSortBy,gender,price,brands,shoeFeel,bestFor,color,setActiveBestFor,setActiveGender,setActivePrice,setActiveBrands,setActiveShoeFeel,setActiveColor}}
         >
             {children}
         </StateContext.Provider>
