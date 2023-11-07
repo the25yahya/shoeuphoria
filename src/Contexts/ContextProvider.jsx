@@ -1,22 +1,53 @@
-import React, {createContext, useContext, useState, useEffect} from "react"
+import React, {createContext, useContext, useState, useEffect, useReducer} from "react"
 import PropTypes from "prop-types"
+import AllProducts from '../Data/AllProducts.json'
 
 const StateContext = createContext();
+const productsContext = createContext();
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+const initialProductsState = {
+  products: AllProducts,
+  filters: {
+    gender: '',
+    price: '',
+    brand: '',
+  }
+}
+
+const productsReducer = (state, action) =>{
+  switch(action.type){
+    case 'FILTER_PRODUCTS':
+      return {
+        ...state,
+        filters:{...state.filters, ...action.payload}
+      };
+    default:
+      return state;
+  }
+}
+
+export function ProductsProvider({children}) {
+  const [state, dispatch] = useReducer(productsReducer, initialProductsState);
+  return(
+    <productsContext.Provider value={{state, dispatch}}>
+      {children}
+    </productsContext.Provider>
+  )
+}
+
+export function useProducts() {
+  return useContext(productsContext);
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const initialState = {
     cart : false,
     user : false,
 } 
-const initialFilterState = {
-  type: '',
-  gender: '',
-  brand: '',
-  color: '',
-  size: '',
-  price: 0,
-  shoeFeel: '',
-  bestFor:'',
-};
+
 
 export const ContextProvider = ({children}) => {
     const [loading, setLoading] = useState(true);
