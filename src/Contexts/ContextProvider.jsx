@@ -17,18 +17,6 @@ const initialProductsState = {
   }
 }
 
-const productsReducer = (state, action) =>{
-  switch(action.type){
-    case 'FILTER_PRODUCTS':
-      return {
-        ...state,
-        filters:{...state.filters, ...action.payload}
-      };
-    default:
-      return state;
-  }
-}
-
 export function ProductsProvider({children}) {
   const [state, dispatch] = useReducer(productsReducer, initialProductsState);
   return(

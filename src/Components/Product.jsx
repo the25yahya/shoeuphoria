@@ -10,9 +10,9 @@ const Product = (props) => {
     setImgSrc(props.img);
   }
   return (
-    <div className='flex-col relative w-300 h-410 mr-5 product'>
+    <div className='mb-10 flex-col relative w-300 h-410 mr-5 product'>
         <div className='relative'><img
-        className='w-300 cursor-pointer' 
+        className='w-320 h-350 cursor-pointer' 
             src={imgSrc}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
