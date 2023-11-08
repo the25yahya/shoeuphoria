@@ -17,8 +17,28 @@ const Products = () => {
   const SelectMen = () => {
     const menSneakers = sneakers.filter(product => product.gender === 'Men');
     setSneakers(menSneakers);
-  
   };
+  const SelectWomen = () => {
+    const womenSneakers = sneakers.filter(product => product.gender === 'Women');
+    setSneakers(womenSneakers);
+  };
+  const SelectPriceRange25 = () => {
+    const filteredSneakers = sneakers.filter(product => product.price >= 25 && product.price <= 50);
+    setSneakers(filteredSneakers);
+  };
+  const SelectPriceRange50 = () => {
+    const filteredSneakers = sneakers.filter(product => product.price >= 50 && product.price <= 100);
+    setSneakers(filteredSneakers);
+  };
+  const SelectPriceRange100 = () => {
+    const filteredSneakers = sneakers.filter(product => product.price >= 100 && product.price <= 150);
+    setSneakers(filteredSneakers);
+  };
+  const SelectPriceRange150 = () => {
+    const filteredSneakers = sneakers.filter(product => product.price >= 150);
+    setSneakers(filteredSneakers);
+  };
+  
   ////////////////////////////////////////////////////
   const toggleMenu = () => {
     setActiveMenu(!activeMenu);
