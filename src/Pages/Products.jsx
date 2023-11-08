@@ -12,8 +12,14 @@ import { colorChannel } from '@mui/system'
 
 const Products = () => {
   //context
-  const {activeMenu,setActiveMenu,sortBy,setSortBy,gender,price,brands,shoeFeel,bestFor,color,setActiveBestFor,setActiveGender,setActivePrice,setActiveBrands,setActiveShoeFeel,setActiveColor} = useStateContext();
+  const {activeMenu,setActiveMenu,sortBy,setSortBy,gender,price,brands,shoeFeel,bestFor,color,setActiveBestFor,setActiveGender,setActivePrice,setActiveBrands,setActiveShoeFeel,setActiveColor,sneakers,setSneakers} = useStateContext();
+  ////////////filtering sneakers
+  const SelectMen = () => {
+    const menSneakers = sneakers.filter(product => product.gender === 'Men');
+    setSneakers(menSneakers);
   
+  };
+  ////////////////////////////////////////////////////
   const toggleMenu = () => {
     setActiveMenu(!activeMenu);
   };
@@ -39,7 +45,7 @@ const Products = () => {
     setSortBy(!sortBy)
   }
   //products
-  const Products = AllProducts.map((item) =>{
+  const Products = sneakers.map((item) =>{
     return(
       <Product 
         img={item.img1}
@@ -89,11 +95,11 @@ const Products = () => {
             <p>{gender ? <AiFillCaretUp /> : <AiFillCaretDown />}</p>
           </div>
           <div className={`flex-col ${gender ? '' : 'hidden'}`}>
-           <div className='flex items-center mt-4 mb-1'>
+           <div onClick={SelectMen} className='cursor-pointer flex items-center mt-4 mb-1'>
             <CheckboxExample/>
             <p>Men</p>
            </div>
-           <div className='flex items-center mb-1'>
+           <div className='cursor-pointer flex items-center mb-1'>
             <CheckboxExample/>
             <p>Women</p>
            </div>

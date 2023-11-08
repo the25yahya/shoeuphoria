@@ -3,33 +3,8 @@ import PropTypes from "prop-types"
 import AllProducts from '../Data/AllProducts.json'
 
 const StateContext = createContext();
-const productsContext = createContext();
 
 
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
-const initialProductsState = {
-  products: AllProducts,
-  filters: {
-    gender: '',
-    price: '',
-    brand: '',
-  }
-}
-
-export function ProductsProvider({children}) {
-  const [state, dispatch] = useReducer(productsReducer, initialProductsState);
-  return(
-    <productsContext.Provider value={{state, dispatch}}>
-      {children}
-    </productsContext.Provider>
-  )
-}
-
-export function useProducts() {
-  return useContext(productsContext);
-}
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const initialState = {
     cart : false,
@@ -38,6 +13,8 @@ const initialState = {
 
 
 export const ContextProvider = ({children}) => {
+  const [sneakers, setSneakers] = useState(AllProducts);
+  ///////////////////////////////////////////////
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -62,7 +39,7 @@ export const ContextProvider = ({children}) => {
     
     return(
         <StateContext.Provider
-          value={{loading,setLoading,isClicked,setIsClicked,handleClick,activeMenu,setActiveMenu,sortBy,setSortBy,gender,price,brands,shoeFeel,bestFor,color,setActiveBestFor,setActiveGender,setActivePrice,setActiveBrands,setActiveShoeFeel,setActiveColor}}
+          value={{loading,setLoading,isClicked,setIsClicked,handleClick,activeMenu,setActiveMenu,sortBy,setSortBy,gender,price,brands,shoeFeel,bestFor,color,setActiveBestFor,setActiveGender,setActivePrice,setActiveBrands,setActiveShoeFeel,setActiveColor,sneakers,setSneakers}}
         >
             {children}
         </StateContext.Provider>
