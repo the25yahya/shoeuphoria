@@ -314,3 +314,17 @@
     opacity: 40%;
     cursor: pointer;
   }
+  /*dropdown==========================*/
+  .dropdown div p{
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: .1s;
+  }
+  .dropdown div p:hover{
+    opacity: 60%;
+    cursor: pointer;
+  }
+  .dropdown div h2{
+    font-size: 15px;
+  }

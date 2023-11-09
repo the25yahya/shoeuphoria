@@ -1,4 +1,4 @@
-import React, {createContext, useContext, useState, useEffect, useReducer} from "react"
+import React, {createContext, useContext, useState, useEffect} from "react"
 import PropTypes from "prop-types"
 import AllProducts from '../Data/AllProducts.json'
 
@@ -36,10 +36,9 @@ export const ContextProvider = ({children}) => {
     const handleClick = (clicked) => {
         setIsClicked({...initialState, [clicked]: true})
       }
-    
     return(
         <StateContext.Provider
-          value={{loading,setLoading,isClicked,setIsClicked,handleClick,activeMenu,setActiveMenu,sortBy,setSortBy,gender,price,brands,shoeFeel,bestFor,color,setActiveBestFor,setActiveGender,setActivePrice,setActiveBrands,setActiveShoeFeel,setActiveColor,sneakers,setSneakers,}}
+          value={{loading,setLoading,isClicked,setIsClicked,handleClick,activeMenu,setActiveMenu,sortBy,setSortBy,gender,price,brands,shoeFeel,bestFor,color,setActiveBestFor,setActiveGender,setActivePrice,setActiveBrands,setActiveShoeFeel,setActiveColor,sneakers,setSneakers}}
         >
             {children}
         </StateContext.Provider>

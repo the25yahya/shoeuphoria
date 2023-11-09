@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Toggle = () => {
+const Toggle = (props) => {
   return (
-    <div className='toggle lg:hidden'>
+    <div onClick={props.toggleDropDown} className='toggle lg:hidden'>
     <input type="checkbox" id="checkbox"/>
     <label htmlFor="checkbox" className="toggle">
         <div className="bars" id="bar1"></div>

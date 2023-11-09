@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { FaShoppingBag, FaUserAlt } from 'react-icons/fa'
 import SearchForm from './SearchFrom'
 import { Link } from 'react-router-dom';
@@ -7,12 +7,23 @@ import { useStateContext } from '../Contexts/ContextProvider';
 import Cart from './Cart'
 import User from './User'
 import Toggle from './Toggle';
+import DropDown from './DropDown'
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+  ///////////////////////////////////////
+  const [isDropDownOpen, setIsDropDownOpen] = useState(false);
+  const toggleDropDown = () => {
+    setIsDropDownOpen(!isDropDownOpen);
+  };
   //nav cotext state
   const {isClicked,setIsClicked,handleClick} = useStateContext();
   return (
-    <nav className='flex justify-around p-10 px-0 items-center lg:px-50'>
+    <nav className='relative flex justify-around p-10 px-0 items-center lg:px-50'>
      {isClicked.cart && <Cart />}
      {isClicked.user && <User />}
      <Link to='/'><p className='font-semibold text-xl cursor-pointer'>SHOE<span className='text-orange-500'>UPHORIA</span></p></Link>
@@ -38,9 +49,20 @@ const Navbar = () => {
         </div>
        </Tooltip>
      </div>
-     <div>
-      <Toggle />
+     <div onClick={toggleDropDown}>
+     <div
+      className={`lg:hidden menu-toggle ${isMenuOpen ? 'open' : ''} cursor-pointer p-2`}
+      onClick={toggleMenu}
+    >
+      <div className="bar h-1 w-8 bg-black my-1 transition-transform transform rounded-xl"></div>
+      <div className="bar h-1 ml-1 w-6 bg-black my-1 transition-opacity opacity-100 rounded-xl"></div>
+      <div className="bar h-1 w-8 bg-black my-1 transition-transform transform rounded-xl"></div>
+    </div>
      </div>
+     <DropDown 
+       toggleDropDown ={toggleDropDown}
+       isOpen={isDropDownOpen}
+     />
     </nav>
   )
 }
