@@ -12,33 +12,7 @@ import { colorChannel } from '@mui/system'
 
 const Products = () => {
   //context
-  const {activeMenu,setActiveMenu,sortBy,setSortBy,gender,price,brands,shoeFeel,bestFor,color,setActiveBestFor,setActiveGender,setActivePrice,setActiveBrands,setActiveShoeFeel,setActiveColor,sneakers,setSneakers} = useStateContext();
-  ////////////filtering sneakers
-  const SelectMen = () => {
-    const menSneakers = sneakers.filter(product => product.gender === 'Men');
-    setSneakers(menSneakers);
-  };
-  const SelectWomen = () => {
-    const womenSneakers = sneakers.filter(product => product.gender === 'Women');
-    setSneakers(womenSneakers);
-  };
-  const SelectPriceRange25 = () => {
-    const filteredSneakers = sneakers.filter(product => product.price >= 25 && product.price <= 50);
-    setSneakers(filteredSneakers);
-  };
-  const SelectPriceRange50 = () => {
-    const filteredSneakers = sneakers.filter(product => product.price >= 50 && product.price <= 100);
-    setSneakers(filteredSneakers);
-  };
-  const SelectPriceRange100 = () => {
-    const filteredSneakers = sneakers.filter(product => product.price >= 100 && product.price <= 150);
-    setSneakers(filteredSneakers);
-  };
-  const SelectPriceRange150 = () => {
-    const filteredSneakers = sneakers.filter(product => product.price >= 150);
-    setSneakers(filteredSneakers);
-  };
-  
+  const {activeMenu,setActiveMenu,sortBy,setSortBy,gender,price,brands,shoeFeel,bestFor,color,setActiveBestFor,setActiveGender,setActivePrice,setActiveBrands,setActiveShoeFeel,setActiveColor,state,dispatch} = useStateContext();
   ////////////////////////////////////////////////////
   const toggleMenu = () => {
     setActiveMenu(!activeMenu);
@@ -65,7 +39,7 @@ const Products = () => {
     setSortBy(!sortBy)
   }
   //products
-  const Products = sneakers.map((item) =>{
+  const Products = state.sneakers.map((item) =>{
     return(
       <Product 
         img={item.img1}
@@ -115,8 +89,8 @@ const Products = () => {
             <p>{gender ? <AiFillCaretUp /> : <AiFillCaretDown />}</p>
           </div>
           <div className={`flex-col ${gender ? '' : 'hidden'}`}>
-           <div onClick={SelectMen} className='cursor-pointer flex items-center mt-4 mb-1'>
-            <CheckboxExample/>
+           <div className='cursor-pointer flex items-center mt-4 mb-1'>
+            <div onClick={dispatch({ type: 'FILTER_MEN' })}><CheckboxExample/></div>
             <p>Men</p>
            </div>
            <div className='cursor-pointer flex items-center mb-1'>
