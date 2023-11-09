@@ -1,7 +1,7 @@
 import {React, useState, useEffect} from 'react'
 import AllProducts from '../Data/AllProducts.json'
 import Product from '../Components/Product'
-import {LuSettings2} from 'react-icons/lu'
+import {LuSettings2,LuListRestart} from 'react-icons/lu'
 import {AiFillCaretDown} from 'react-icons/ai'
 import {AiFillCaretUp} from 'react-icons/ai'
 import {BiChevronRight,BiChevronLeft} from 'react-icons/bi'
@@ -9,10 +9,44 @@ import { useStateContext } from '../Contexts/ContextProvider'
 import CheckboxExample from '../Components/CheckBox'
 import RotatingBanner from '../Components/Banner'
 import { colorChannel } from '@mui/system'
+import { Tooltip } from '@chakra-ui/react'
 
 const Products = () => {
   //context
-  const {activeMenu,setActiveMenu,sortBy,setSortBy,gender,price,brands,shoeFeel,bestFor,color,setActiveBestFor,setActiveGender,setActivePrice,setActiveBrands,setActiveShoeFeel,setActiveColor,state,dispatch} = useStateContext();
+  const {activeMenu,setActiveMenu,sortBy,setSortBy,gender,price,brands,shoeFeel,bestFor,color,setActiveBestFor,setActiveGender,setActivePrice,setActiveBrands,setActiveShoeFeel,setActiveColor,sneakers,setSneakers} = useStateContext();
+  ////////////filtering sneakers
+  const SelectMen = () => {
+    const menSneakers = sneakers.filter(product => product.gender === 'Men');
+    setSneakers(menSneakers);
+  };
+  const SelectWomen = () => {
+    const womenSneakers = sneakers.filter(product => product.gender === 'Women');
+    setSneakers(womenSneakers);
+  };
+  const SelectUnisex = () => {
+    const womenSneakers = sneakers.filter(product => product.gender === 'Unisex');
+    setSneakers(womenSneakers);
+  };
+  const SelectPriceRange25 = () => {
+    const filteredSneakers = sneakers.filter(product => product.price >= 25 && product.price <= 50);
+    setSneakers(filteredSneakers);
+  };
+  const SelectPriceRange50 = () => {
+    const filteredSneakers = sneakers.filter(product => product.price >= 50 && product.price <= 100);
+    setSneakers(filteredSneakers);
+  };
+  const SelectPriceRange100 = () => {
+    const filteredSneakers = sneakers.filter(product => product.price >= 100 && product.price <= 150);
+    setSneakers(filteredSneakers);
+  };
+  const SelectPriceRange150 = () => {
+    const filteredSneakers = sneakers.filter(product => product.price >= 150);
+    setSneakers(filteredSneakers);
+  };
+  const SelectReset = () => {
+    const filteredSneakers = AllProducts
+    setSneakers(filteredSneakers);
+  };
   ////////////////////////////////////////////////////
   const toggleMenu = () => {
     setActiveMenu(!activeMenu);
@@ -39,7 +73,7 @@ const Products = () => {
     setSortBy(!sortBy)
   }
   //products
-  const Products = state.sneakers.map((item) =>{
+  const Products = sneakers.map((item) =>{
     return(
       <Product 
         img={item.img1}
@@ -74,7 +108,12 @@ const Products = () => {
         </div>
       </div>
       <div className='mt-10 flex relative products-parent'>
-        <div className={`slide-left flex-col mx-10 border-t border-gray-300 pt-2 ${activeMenu ? '' : 'hidden'}`}>
+        <div className={`relative slide-left flex-col mx-10 border-t border-gray-300 pt-2 ${activeMenu ? '' : 'hidden'}`}>
+         <Tooltip label='reset settings'>
+          <div onClick={SelectReset} className='cursor-pointer absolute right-0 text-2xl'>
+          <LuListRestart />
+          </div>
+         </Tooltip>
          <div className='flex-col w-200 filter1'>
            <p>Lifestyle</p>
            <p>Running</p>
@@ -90,15 +129,21 @@ const Products = () => {
           </div>
           <div className={`flex-col ${gender ? '' : 'hidden'}`}>
            <div className='cursor-pointer flex items-center mt-4 mb-1'>
-            <div onClick={dispatch({ type: 'FILTER_MEN' })}><CheckboxExample/></div>
+           <div onClick={SelectMen}>
+            <CheckboxExample/>
+           </div> 
             <p>Men</p>
            </div>
            <div className='cursor-pointer flex items-center mb-1'>
+           <div onClick={SelectWomen}>
             <CheckboxExample/>
+           </div> 
             <p>Women</p>
            </div>
            <div className='flex items-center'>
+           <div onClick={SelectUnisex}>
             <CheckboxExample/>
+           </div> 
             <p>Unisex</p>
            </div>
            </div>
@@ -110,19 +155,27 @@ const Products = () => {
            </div>
            <div className={`flex-col ${price ? '' : 'hidden' }`}>
             <div className='flex items-center mt-5'>
-             <CheckboxExample/>
+            <div onClick={SelectPriceRange25}>
+            <CheckboxExample/>
+           </div> 
              <p>$25-$50</p>
             </div>
             <div className='flex items-center mt-2'>
-             <CheckboxExample/>
+            <div onClick={SelectPriceRange50}>
+            <CheckboxExample/>
+           </div> 
              <p>$50-$100</p>
             </div>
             <div className='flex items-center mt-2'>
-             <CheckboxExample/>
+            <div onClick={SelectPriceRange100}>
+            <CheckboxExample/>
+           </div> 
              <p>$100-$150</p>
             </div>
            <div className='flex items-center mt-2'>
+           <div onClick={SelectPriceRange150}>
             <CheckboxExample/>
+           </div> 
             <p>Over $150</p>
            </div>
            </div>
