@@ -4,8 +4,6 @@ import SearchForm from './SearchFrom'
 import { Link } from 'react-router-dom';
 import { Tooltip } from '@chakra-ui/react';
 import { useStateContext } from '../Contexts/ContextProvider';
-import Cart from './Cart'
-import User from './User'
 import Toggle from './Toggle';
 import DropDown from './DropDown'
 
@@ -21,11 +19,9 @@ const Navbar = () => {
     setIsDropDownOpen(!isDropDownOpen);
   };
   //nav cotext state
-  const {isClicked,setIsClicked,handleClick} = useStateContext();
+  const {handleClick} = useStateContext();
   return (
     <nav className='relative flex justify-around p-10 px-0 items-center lg:px-50'>
-     {isClicked.cart && <Cart />}
-     {isClicked.user && <User />}
      <Link to='/'><p className='font-semibold text-xl cursor-pointer'>SHOE<span className='text-orange-500'>UPHORIA</span></p></Link>
      <div className='items-center font-semibold hidden lg:flex'>
        <Link to='/'><p className='pr-8 hover:text-orange-500 cursor-pointer transition'>Home</p></Link>
@@ -34,20 +30,24 @@ const Navbar = () => {
        <Link to='/Products'><p className='pr-8 hover:text-orange-500 cursor-pointer transition'>Products</p></Link>
        <Link to='/Brands'><p className='pr-8 hover:text-orange-500 cursor-pointer transition'>Brands</p></Link>
        <SearchForm />
-       <Tooltip label='Cart'>
-        <div
-        onClick={()=>handleClick('user')} 
-        className='px-3 pr-8 cursor-pointer'>
-          <FaShoppingBag />
-        </div>
+       <Link to='/cart'>
+         <Tooltip label='Cart'>
+           <div
+            onClick={()=>handleClick('user')} 
+            className='px-3 pr-8 cursor-pointer'>
+           <FaShoppingBag />
+           </div>
+         </Tooltip>
+       </Link>
+       <Link to='/user'>
+          <Tooltip label='profile'>
+            <div 
+             onClick={()=>handleClick('cart')}
+             className='cursor-pointer'> 
+              <FaUserAlt />
+            </div>
        </Tooltip>
-       <Tooltip label='profile'>
-        <div 
-        onClick={()=>handleClick('cart')}
-        className='cursor-pointer'> 
-          <FaUserAlt />
-        </div>
-       </Tooltip>
+       </Link>
      </div>
      <div onClick={toggleDropDown}>
      <div

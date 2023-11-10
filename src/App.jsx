@@ -4,7 +4,7 @@ import { BrowserRouter, BrowserRouter as Router, Route, Routes } from 'react-rou
 import { ChakraProvider } from '@chakra-ui/react';
 import Navbar from './Components/Navbar'
 import Loader from './Components/Loader';
-import {Men, Women, Home, Brands, Products} from './pages'
+import {Men, Women, Home, Brands, Products, Cart, User} from './pages'
 import { useStateContext } from './Contexts/ContextProvider';
 import Footer from './Components/Footer';
 import './media.css'
@@ -22,6 +22,8 @@ function App() {
           <Route path='/men' element={<Men />}/>
           <Route path='/women' element={<Women />}/>
           <Route path='/brands' element={<Brands />}/>
+          <Route path='/cart' element={<Cart />}/>
+          <Route path='/user' element={<User />}/>
         </Routes>
         <Footer />
       </div>}

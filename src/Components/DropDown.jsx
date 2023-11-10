@@ -7,26 +7,26 @@ import { Link } from 'react-router-dom';
 
 const DropDown = (props) => { 
   return (
-    <div className={`dropdown fixed top-0 w-300 right-0 bg-white p-5 z-20 flex items-start justify-star h-screen shadow-2xl lg:hidden flex-col ${props.isOpen ? '' : 'hidden'}`}>
+    <div className={`slide-right dropdown fixed top-0 w-300 right-0 bg-white p-5 z-20 flex items-start justify-star h-screen shadow-2xl lg:hidden flex-col ${props.isOpen ? '' : 'hidden'}`}>
       <div onClick={props.toggleDropDown} className='absolute right-5 text-lg cursor-pointer transition hover:opacity-30'>
        <FaTimes />
       </div>
       <div className='text-2xl ml-3 w-full mt-5 mb-20'>
         <h2>Menu</h2>
         <Link to='/'>
-          <p className='flex  items-center justify-between'>Home <span className='mt-1 mr-5 text-xl font-bold'><BsChevronRight /></span></p>
+          <p onClick={props.toggleDropDown} className='flex  items-center justify-between'>Home <span className='mt-1 mr-5 text-xl font-bold'><BsChevronRight /></span></p>
         </Link>
         <Link to='/Men'>
-          <p className='flex  items-center justify-between'>Men <span className='mt-1 mr-5 text-xl font-bold'><BsChevronRight /></span></p>
+          <p onClick={props.toggleDropDown} className='flex  items-center justify-between'>Men <span className='mt-1 mr-5 text-xl font-bold'><BsChevronRight /></span></p>
         </Link>
         <Link to='/Women'>
-          <p className='flex  items-center justify-between'>Women <span className='mt-1 mr-5 text-xl font-bold'><BsChevronRight /></span></p>
+          <p onClick={props.toggleDropDown} className='flex  items-center justify-between'>Women <span className='mt-1 mr-5 text-xl font-bold'><BsChevronRight /></span></p>
         </Link>
         <Link to='/Products'>
-         <p className='flex  items-center justify-between'>Products <span className='mt-1 mr-5 text-xl font-bold'><BsChevronRight /></span></p>
+         <p onClick={props.toggleDropDown} className='flex  items-center justify-between'>Products <span className='mt-1 mr-5 text-xl font-bold'><BsChevronRight /></span></p>
         </Link>
         <Link to='/Brands'>
-         <p className='flex  items-center justify-between'>Brands <span className='mt-1 mr-5 text-xl font-bold'><BsChevronRight /></span></p>
+         <p onClick={props.toggleDropDown} className='flex  items-center justify-between'>Brands <span className='mt-1 mr-5 text-xl font-bold'><BsChevronRight /></span></p>
         </Link>
       </div>
       <div className='w-full ml-2'>
