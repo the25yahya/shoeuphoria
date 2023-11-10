@@ -2,7 +2,7 @@ import React from 'react'
 
 const User = () => {
   return (
-    <div className='user w-full flex justify-center pt-10'>
+    <div className='fade-in user w-full flex justify-center pt-10'>
     <form className="form2">
     <p className="title2">Register </p>
     <p className="message">Signup now and get full access to our app. </p>
