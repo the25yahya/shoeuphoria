@@ -30,14 +30,18 @@ const DropDown = (props) => {
         </Link>
       </div>
       <div className='w-full ml-2'>
-        <div className='flex'>
+        <Link to='/cart'>
+        <div onClick={props.toggleDropDown}  className='flex'>
           <div className='mr-5 mt-0.5 1 text-xl'><FaShoppingBag /></div>
           <p>Bag</p>
         </div>
-        <div className='flex'>
+        </Link>
+        <Link to='/user'>
+        <div onClick={props.toggleDropDown}  className='flex'>
           <div className='mr-5 mt-0.5 1 text-xl'><FaUserAlt /></div>
           <p>User</p>
         </div>
+        </Link>
       </div>
     </div>
   )

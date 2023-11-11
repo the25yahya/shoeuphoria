@@ -13,7 +13,8 @@
     "rating":"4",
     "reviews":"31 reviews",
     "tag":"New !",
-    "id":"0"
+    "id":"0",
+    "color":"black"
   },
       {
         "name": "Club C 85 Shoes",
@@ -29,7 +30,8 @@
         "rating":"4",
         "reviews":"42 reviews",
         "tag":"New !",
-        "id":"1"
+        "id":"1",
+        "color":"white"
       },
       {
         "name": "NIKE AIR MAX MOTIF",
@@ -45,7 +47,8 @@
         "rating":"5",
         "reviews":"5 reviews",
         "tag":"-40%",
-        "id":"2"
+        "id":"2",
+        "color":"blue"
       },
       {
         "name": "NIKE AIR MAX 270 BLACK",
@@ -61,7 +64,8 @@
         "rating":"4",
         "reviews":"31 reviews",
         "tag":"-10%",
-        "id":"3"
+        "id":"3",
+        "color":"multi"
       },
       {
         "name": "BB 4000 II Shoes",
@@ -78,7 +82,8 @@
         "rating":"4",
         "reviews":"42 reviews",
         "tag":"-30%",
-        "id":"4"
+        "id":"4",
+        "color":"multi"
       },
       {
         "name": "Reebok Glide Ripple Clip Shoes",
@@ -95,7 +100,8 @@
         "rating":"4",
         "reviews":"45 reviews",
         "tag":"-20%",
-        "id":"5"
+        "id":"5",
+        "color":"multi"
       },
       {
         "name": "Nike Air Max 270 GO GS",
@@ -111,7 +117,8 @@
         "rating":"4",
         "reviews":"31 reviews",
         "tag":"-10%",
-        "id":"6"
+        "id":"6",
+        "color":"gray"
       },
       {
         "name": "Nike Air Max 270 GO Casual",
@@ -127,7 +134,8 @@
         "rating":"4",
         "reviews":"31 reviews",
         "tag":"New !",
-        "id":"7"
+        "id":"7",
+        "color":"multi"
       },
       {
         "name": "Flexagon Energy 4 Shoes",
@@ -143,6 +151,7 @@
         "rating":"4",
         "reviews":"30 reviews",
         "tag":"New !",
-        "id":"8"
+        "id":"8",
+        "color":"multi"
       }
 ]

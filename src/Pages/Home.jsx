@@ -110,23 +110,15 @@ const Home = () => {
       <h1 className='text-3xl font-thin mb-5'>Our Products</h1>
       <div className='flex justify-between items-center'>
        <div className='flex w-600 items-center'>
-        <div id='mens' className='flex items-center mr-8 border border-black rounded-xl px-2 text-sm py-1'>
-          <p className='mr1'>Mens</p>
-          <BsChevronDown />
-        </div>
         <p className='mr-5 border border-transparent cursor-pointer text-sm font-semibold
-        hover:border hover:bg-orange-500 hover:text-white hover:rounded-xl px-2 py-1'>All</p>
-        <p className='mr-5 border border-transparent cursor-pointer text-sm font-semibold hover:border hover:bg-orange-500 hover:text-white hover:rounded-xl px-2 py-1'>Sneakers</p>
-        <p className='mr-5 border border-transparent cursor-pointer text-sm font-semibold hover:border hover:bg-orange-500 hover:text-white hover:rounded-xl px-2 py-1'>Sports</p>
-        <p className='mr-5 border border-transparent cursor-pointer text-sm font-semibold hover:border hover:bg-orange-500 hover:text-white hover:rounded-xl px-2 py-1'>Formal</p>
-        <p className='mr-5 border border-transparent cursor-pointer text-sm font-semibold hover:border hover:bg-orange-500 hover:text-white hover:rounded-xl px-2 py-1'>Slip-on</p>
-       </div>
-       <div id='filter' className='flex items-center text-sm border border-black px-2 py-1 rounded-xl'>
-        <p className='mr-2'>Filter</p>
-        <LuSettings2 />
+        hover:border hover:bg-orange-500 hover:text-white hover:rounded-xl px-2 py-1 transition'>All</p>
+        <p className='mr-5 border border-transparent cursor-pointer text-sm font-semibold hover:border hover:bg-orange-500 hover:text-white hover:rounded-xl px-2 py-1 transition'>Sneakers</p>
+        <p className='mr-5 border border-transparent cursor-pointer text-sm font-semibold hover:border hover:bg-orange-500 hover:text-white hover:rounded-xl px-2 py-1 transition'>Sports</p>
+        <p className='mr-5 border border-transparent cursor-pointer text-sm font-semibold hover:border hover:bg-orange-500 hover:text-white hover:rounded-xl px-2 py-1 transition'>Formal</p>
+        <p className='mr-5 border border-transparent cursor-pointer text-sm font-semibold hover:border hover:bg-orange-500 hover:text-white hover:rounded-xl px-2 py-1 transition'>Slip-on</p>
        </div>
       </div>
-      <div className='flex w-full mt-10 productsHome'>
+      <div className='flex w-full mt-10 productsHome justify-start'>
         {Products}
       </div>
       <div className='w-full h-30 text-center'>

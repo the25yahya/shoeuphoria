@@ -27,6 +27,70 @@ const Products = () => {
     const womenSneakers = sneakers.filter(product => product.gender === 'Unisex');
     setSneakers(womenSneakers);
   };
+  const SelectNike = () => {
+    const womenSneakers = sneakers.filter(product => product.brand === 'Nike');
+    setSneakers(womenSneakers);
+  };
+  const SelectJordan = () => {
+    const womenSneakers = sneakers.filter(product => product.brand === 'Jordan');
+    setSneakers(womenSneakers);
+  };
+  const SelectReebok = () => {
+    const womenSneakers = sneakers.filter(product => product.brand === 'Reebok');
+    setSneakers(womenSneakers);
+  };
+  const SelectBlack = () => {
+    const womenSneakers = sneakers.filter(product => product.color === 'black');
+    setSneakers(womenSneakers);
+  };
+  const SelectBlue = () => {
+    const womenSneakers = sneakers.filter(product => product.color === 'blue');
+    setSneakers(womenSneakers);
+  };
+  const SelectWhite = () => {
+    const womenSneakers = sneakers.filter(product => product.color === 'white');
+    setSneakers(womenSneakers);
+  };
+  const SelectBrown = () => {
+    const womenSneakers = sneakers.filter(product => product.color === 'brown');
+    setSneakers(womenSneakers);
+  };
+  const SelectGreen = () => {
+    const womenSneakers = sneakers.filter(product => product.color === 'green');
+    setSneakers(womenSneakers);
+  };
+  const SelectGray = () => {
+    const womenSneakers = sneakers.filter(product => product.color === 'gray');
+    setSneakers(womenSneakers);
+  };
+  const SelectMulti = () => {
+    const womenSneakers = sneakers.filter(product => product.color === 'multi');
+    setSneakers(womenSneakers);
+  };
+  const SelectPink = () => {
+    const womenSneakers = sneakers.filter(product => product.color === 'pink');
+    setSneakers(womenSneakers);
+  };
+  const SelectOrange = () => {
+    const womenSneakers = sneakers.filter(product => product.color === 'orange');
+    setSneakers(womenSneakers);
+  };
+  const SelectPurple = () => {
+    const womenSneakers = sneakers.filter(product => product.color === 'purple');
+    setSneakers(womenSneakers);
+  };
+  const SelectRed = () => {
+    const womenSneakers = sneakers.filter(product => product.color === 'red');
+    setSneakers(womenSneakers);
+  };
+  const SelectYellow = () => {
+    const womenSneakers = sneakers.filter(product => product.color === 'yellow');
+    setSneakers(womenSneakers);
+  };
+  const SelectNewest = () => {
+    const womenSneakers = sneakers.filter(product => product.tag === 'New !');
+    setSneakers(womenSneakers);
+  };
   const SelectPriceRange25 = () => {
     const filteredSneakers = sneakers.filter(product => product.price >= 25 && product.price <= 50);
     setSneakers(filteredSneakers);
@@ -43,6 +107,8 @@ const Products = () => {
     const filteredSneakers = sneakers.filter(product => product.price >= 150);
     setSneakers(filteredSneakers);
   };
+
+  
   const SelectReset = () => {
     const filteredSneakers = AllProducts
     setSneakers(filteredSneakers);
@@ -100,7 +166,7 @@ const Products = () => {
           <span className='ml-2'><LuSettings2 /></span>
           </p>
           <p onClick={toggleSortBy} className='flex items-center cursor-pointer'>Sort By<span className='ml-2'><AiFillCaretDown /></span></p>
-          <div className={`bg-gray-100 z-10 absolute -right-10 top-8 p-5 rounded-l-xl border border-black border-r-0 border-t-0 ${sortBy ? '' : 'hidden'}`}>
+          <div onClick={SelectNewest} className={`bg-gray-100 z-10 absolute -right-10 top-8 p-5 rounded-l-xl border border-black border-r-0 border-t-0 ${sortBy ? '' : 'hidden'}`}>
             <p className='font-semibold hover:opacity-40 transition cursor-pointer'>Newest</p>
             <p className='font-semibold hover:opacity-40 transition cursor-pointer'>Price: High-Low</p>
             <p className='font-semibold hover:opacity-40 transition cursor-pointer'>Price: Low-High</p>
@@ -186,15 +252,15 @@ const Products = () => {
              <p>{brands ? <AiFillCaretUp /> : <AiFillCaretDown />}</p>
            </div>
            <div className={`flex-col ${brands ? '' : 'hidden'}`}>
-           <div className='flex items-center mt-5'>
+           <div onClick={SelectNike} className='flex items-center mt-5'>
              <CheckboxExample/>
              <p>Nike</p>
            </div>
-           <div className='flex items-center mt-2'>
+           <div onClick={SelectJordan} className='flex items-center mt-2'>
              <CheckboxExample/>
              <p>Jordan</p>
            </div>
-           <div className='flex items-center mt-2'>
+           <div onClick={SelectReebok} className='flex items-center mt-2'>
              <CheckboxExample />
              <p>Reebok</p>
            </div>
@@ -248,57 +314,57 @@ const Products = () => {
            <div className={`flex-col  mt-5 ${color ? '' : 'hidden'}`}>
             <div className='flex justify-between'>
              <div className='flex-col items-center'>
-              <div className='w-8 h-8 bg-black rounded-full'></div>
+              <div onClick={SelectBlack} className='w-8 h-8 bg-black rounded-full cursor-pointer'></div>
               <span>Black</span>
              </div>
              <div className='flex-col items-center'>
-              <div className='w-8 h-8 bg-blue-500 rounded-full'></div>
+              <div onClick={SelectBlue} className='w-8 h-8 bg-blue-500 rounded-full cursor-pointer'></div>
               <span>Blue</span>
              </div>
              <div className='flex-col items-center'>
-              <div className='w-8 h-8 bg-yellow-900 rounded-full'></div>
+              <div onClick={SelectBrown} className='w-8 h-8 bg-yellow-900 rounded-full cursor-pointer'></div>
               <span>Brown</span>
              </div>
             </div>
             <div className='flex justify-between mt-5'>
              <div className='flex-col items-center'>
-               <div className='w-8 h-8 bg-green-500 rounded-full'></div>
+               <div onClick={SelectGreen} className='cursor-pointer w-8 h-8 bg-green-500 rounded-full'></div>
                <span>Green</span>
               </div>
               <div className='flex-col items-center'>
-               <div className='w-8 h-8 bg-gray-500 rounded-full'></div>
+               <div onClick={SelectGray} className='w-8 h-8 bg-gray-500 rounded-full cursor-pointer'></div>
                <span>Gray</span>
               </div>
               <div className='flex-col items-center'>
-               <div className='w-8 h-8 bg-gradient-to-r from-blue-200 to-purple-500 rounded-full'></div>
+               <div onClick={SelectMulti} className='cursor-pointer w-8 h-8 bg-gradient-to-r from-blue-200 to-purple-500 rounded-full'></div>
                <span>Multi</span>
               </div> 
             </div>
             <div className='flex justify-between mt-5'>
               <div className='flex-col items-center'>
-               <div className='w-8 h-8 bg-pink-500 rounded-full'></div>
+               <div onClick={SelectPink} className='w-8 h-8 bg-pink-500 rounded-full cursor-pointer'></div>
                <span>Pink</span>
               </div>
               <div className='flex-col items-center'>
-               <div className='w-8 h-8 bg-orange-500 rounded-full'></div>
+               <div onClick={SelectOrange} className='w-8 h-8 bg-orange-500 rounded-full cursor-pointer'></div>
                <span>Orange</span>
               </div>
               <div className='flex-col items-center'>
-               <div className='w-8 h-8 bg-purple-500 rounded-full'></div>
+               <div onClick={SelectPurple} className='w-8 h-8 bg-purple-500 rounded-full cursor-pointer'></div>
                <span>Purple</span>
               </div> 
             </div>
             <div className='flex justify-between mt-5'>
              <div className='flex-col items-center'>
-               <div className='w-8 h-8 bg-white rounded-full'></div>
+               <div onClick={SelectWhite} className='w-8 h-8 bg-white rounded-full cursor-pointer'></div>
                <span>White</span>
               </div>
               <div className='flex-col items-center'>
-               <div className='w-8 h-8 bg-red-600 rounded-full'></div>
+               <div onClick={SelectRed} className='w-8 h-8 bg-red-600 rounded-full cursor-pointer'></div>
                <span>Red</span>
               </div>
               <div className='flex-col items-center'>
-               <div className='w-8 h-8 bg-yellow-500 rounded-full'></div>
+               <div onClick={SelectYellow} className='w-8 h-8 bg-yellow-500 rounded-full cursor-pointer'></div>
                <span>Yellow</span>
               </div>
             </div>
