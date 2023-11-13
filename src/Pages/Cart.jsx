@@ -5,14 +5,14 @@ import { Tooltip } from '@chakra-ui/react'
 
 const Cart = (props) => {
   return (
-    <div className='flex justify-center mt-10 fade-in'>
-      <div className='w-600 flex-col'>
+    <div className='justify-center mt-10 fade-in cart sm:flex'>
+      <div className='bag w-600 flex-col'>
        <div>
        <h2 className='text-3xl'>Bag</h2>
         <p className='ml-2 mt-2'>There are no items in your bag</p>
        </div>
       </div>
-      <div className='pb-5 w-350'>
+      <div className='pb-5 w-350 summary'>
         <h2 className='text-3xl mb-5'>Summary</h2>
         <div className='flex-col'>
           <div className='flex items-center justify-between'>

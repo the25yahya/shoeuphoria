@@ -83,6 +83,11 @@
         font-size: 15px;
     }
   }
+  @media screen and (max-width: 984px){
+    .cart .bag{
+        width: 400px;
+    }
+  }
   @media screen and (max-width: 830px) {
     
     .hero .hero1{
@@ -162,6 +167,13 @@
     /*section5=====================*/
     .productsHome{
         flex-wrap: wrap;
+    }
+    .cart .bag{
+        width: 350px;
+        margin-bottom: 50px;
+    }
+    .cart{
+        margin-left: 50px;
     }
   }
   @media screen and (max-width: 750px){
@@ -286,6 +298,14 @@
             width: 400px;
             height: 200px;
         }
+  }
+  @media screen and (max-width: 410px){
+    .cart .summary{
+        width: 300px;
+    }
+    .cart{
+        margin-left: 15px;
+    }
   }
   /* min width ------------------------------------------------------------------------------------------------------*/
   @media screen and (min-width: 1029px) {
