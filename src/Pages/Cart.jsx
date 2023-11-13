@@ -1,10 +1,29 @@
-import React from 'react'
+import React, { useReducer } from 'react'
 import { AiFillQuestionCircle } from 'react-icons/ai'
 import { Tooltip } from '@chakra-ui/react'
+import HomeProducts from '../Data/HomeProducts.json'
+import Product from '../Components/Product'
+import { useStateContext } from '../Contexts/ContextProvider';
 
 
 const Cart = (props) => {
+  const { cartReducer,cartInitialState, state } = useStateContext();
+  console.log(state);
+  const Products = HomeProducts.map((item) =>{
+    return(
+      <Product 
+        img={item.img1}
+        img2={item.img2}
+        price={item.price}
+        key={item.id}
+        name={item.name}
+        brand={item.brand}
+        tag={item.tag}
+      />
+    )
+  })
   return (
+  <div> 
     <div className='justify-center mt-10 fade-in cart sm:flex'>
       <div className='bag w-600 flex-col'>
        <div>
@@ -33,8 +52,19 @@ const Cart = (props) => {
           <p>_</p>
         </div>
         <button className='ml-12 mt-10 w-250 px-20 py-3 bg-zinc-200 rounded-xl text-gray-500 font-semibold'>Chekout</button>
+        <button className='ml-12 mt-3 w-250 px-20 py-3 bg-zinc-200 rounded-xl text-gray-500 font-semibold italic'>
+          <span className='text-blue-900'>Pay</span>
+          <span className='text-cyan-500 font-bold'>Pal</span>
+        </button>
       </div>
     </div>
+    <div className='mt-50'>
+      <h1 className='mx-12 text-2xl font-semibold italic'>You might Like :</h1>
+      <div className='flex py-10 px-12 flex-wrap'>
+        {Products}
+      </div>
+    </div>
+  </div>  
   )
 }
 

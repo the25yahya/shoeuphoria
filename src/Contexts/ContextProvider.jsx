@@ -1,4 +1,4 @@
-import React, {createContext, useContext, useState, useEffect} from "react"
+import React, {createContext, useContext, useState, useEffect, useReducer} from "react"
 import PropTypes from "prop-types"
 import AllProducts from '../Data/AllProducts.json'
 
@@ -13,6 +13,7 @@ const initialState = {
 
 
 export const ContextProvider = ({children}) => {
+
   const [sneakers, setSneakers] = useState(AllProducts);
   ///////////////////////////////////////////////
     const [loading, setLoading] = useState(true);
@@ -36,9 +37,24 @@ export const ContextProvider = ({children}) => {
     const handleClick = (clicked) => {
         setIsClicked({...initialState, [clicked]: true})
       }
+      //cartReducer.js
+    const cartReducer = ( state, action )=>{
+      switch(action.type){
+        case 'ADD_TO_CART' : 
+         return{
+          ...state, cart: [...state.cart,action.payload ]
+         };
+      }
+    }
+
+    const cartInitialState = {
+      cart:[],
+    }
+    const [ state, dispatch ] = useReducer(cartReducer,cartInitialState)
+
     return(
         <StateContext.Provider
-          value={{loading,setLoading,isClicked,setIsClicked,handleClick,activeMenu,setActiveMenu,sortBy,setSortBy,gender,price,brands,shoeFeel,bestFor,color,setActiveBestFor,setActiveGender,setActivePrice,setActiveBrands,setActiveShoeFeel,setActiveColor,sneakers,setSneakers}}
+          value={{loading,setLoading,isClicked,setIsClicked,handleClick,activeMenu,setActiveMenu,sortBy,setSortBy,gender,price,brands,shoeFeel,bestFor,color,setActiveBestFor,setActiveGender,setActivePrice,setActiveBrands,setActiveShoeFeel,setActiveColor,sneakers,setSneakers,cartReducer,cartInitialState,state,dispatch}}
         >
             {children}
         </StateContext.Provider>

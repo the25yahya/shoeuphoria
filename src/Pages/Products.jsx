@@ -1,4 +1,4 @@
-import {React, useState, useEffect} from 'react'
+import {React, useState, useEffect, useReducer} from 'react'
 import AllProducts from '../Data/AllProducts.json'
 import Product from '../Components/Product'
 import {LuSettings2,LuListRestart} from 'react-icons/lu'
@@ -11,9 +11,10 @@ import RotatingBanner from '../Components/Banner'
 import { colorChannel } from '@mui/system'
 import { Tooltip } from '@chakra-ui/react'
 
+
 const Products = () => {
   //context
-  const {activeMenu,setActiveMenu,sortBy,setSortBy,gender,price,brands,shoeFeel,bestFor,color,setActiveBestFor,setActiveGender,setActivePrice,setActiveBrands,setActiveShoeFeel,setActiveColor,sneakers,setSneakers} = useStateContext();
+  const {activeMenu,setActiveMenu,sortBy,setSortBy,gender,price,brands,shoeFeel,bestFor,color,setActiveBestFor,setActiveGender,setActivePrice,setActiveBrands,setActiveShoeFeel,setActiveColor,sneakers,setSneakers,cartReducer,cartInitialState,state,dispatch} = useStateContext();
   ////////////filtering sneakers
   const SelectMen = () => {
     const menSneakers = sneakers.filter(product => product.gender === 'Men');
@@ -140,8 +141,13 @@ const Products = () => {
   }
   //products
   const Products = sneakers.map((item) =>{
+    const addToCart = (item) =>{
+      dispatch({ type : 'ADD_TO_CART', payload:item})
+      console.log(state);
+    };
     return(
       <Product 
+        onClick={addToCart}
         img={item.img1}
         img2={item.img2}
         price={item.price}

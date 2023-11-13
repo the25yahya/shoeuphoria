@@ -6,7 +6,7 @@ import Email from './Email'
 
 const Footer = () => {
   return (
-    <footer className='flex-col mt-100 border-t pt-20 pb-2'>
+    <footer className='flex-col mt-50 border-t pt-20 pb-2'>
         <div className='flex text-center w-full justify-around items-center email section'>
             <div>
                 <p className='font-bold text-xl'>Join our newsletter</p>

@@ -1,25 +1,44 @@
 [
-    {
-        "name": "BB 4000 II Shoes",
+  {
+    "name": "Flexagon Energy 4 Shoes",
+    "brand": "Reebok",
+    "gender":"Men",
+    "brandImg":"https://media.licdn.com/dms/image/D5612AQGrQ96-xWwZ-g/article-cover_image-shrink_720_1280/0/1678958205008?e=2147483647&v=beta&t=yQvmsSsdIrMnIKkzWdlNahykLSdNrz2ryqK_Bx83tz0",
+    "price": "43.00",
+    "img1":"https://images.reebok.eu/reebok-flexagon-energy-4-shoes_20136986_50372531_2048.jpg?c=1",
+    "img2":"https://images.reebok.eu/reebok-flexagon-energy-4-shoes_20136986_50372535_2048.jpg?c=1",
+    "img3":"https://images.reebok.eu/reebok-flexagon-energy-4-shoes_20136986_50372574_2048.jpg?c=1",
+    "img4":"https://images.reebok.eu/reebok-flexagon-energy-4-shoes_20136986_50411489_2048.jpg?c=1",
+    "img5":"https://images.reebok.eu/reebok-flexagon-energy-4-shoes_20136986_50372596_2048.jpg?c=1",
+    "rating":"4",
+    "reviews":"31 reviews",
+    "tag":"New !",
+    "id":"0",
+    "color":"black"
+  },
+      {
+        "name": "Club C 85 Shoes",
         "brand": "Reebok",
+        "gender":"Men",
         "brandImg":"https://media.licdn.com/dms/image/D5612AQGrQ96-xWwZ-g/article-cover_image-shrink_720_1280/0/1678958205008?e=2147483647&v=beta&t=yQvmsSsdIrMnIKkzWdlNahykLSdNrz2ryqK_Bx83tz0",
-        "price": "$90.00",
+        "price": "100.00",
         "img":"./Products/BB4000PR.png",
-        "img1":"https://images.reebok.eu/19/72/67/69/19726769_45304691_800.jpg",
-        "img2":"https://images.reebok.eu/reebok-bb-4000-ii-shoes_19726769_45303729_2048.jpg?c=1",
-        "img3":"https://images.reebok.eu/reebok-bb-4000-ii-shoes_19726769_45305033_2048.jpg?c=1",
-        "img4":"https://www.sneakersnstuff.com/images/377241/IE6833_6_FOOTWEAR_Photography_Back%20Lateral%20Top%20View_white.jpg",
-        "img5":"https://images.reebok.eu/reebok-bb-4000-ii-shoes_19727162_44790848_2048.jpg?c=1",
+        "img1":"https://images.reebok.eu/reebok-club-c-85-shoes_19729679_45447857_1000.jpg?c=1",
+        "img2":"https://images.reebok.eu/reebok-club-c-85-shoes_19729679_45447856_300.jpg?c=1",
+        "img3":"https://images.reebok.eu/reebok-club-c-85-shoes_19729679_45447859_300.jpg?c=1",
+        "img4":"https://images.reebok.eu/reebok-club-c-85-shoes_19729679_45447861_300.jpg?c=1",
         "rating":"4",
         "reviews":"42 reviews",
-        "tag":"-30%",
-        "id":"0"
+        "tag":"New !",
+        "id":"1",
+        "color":"white"
       },
       {
         "name": "NIKE AIR MAX MOTIF",
         "brand": "Nike",
+        "gender":"Men",
         "brandImg":"https://static.nike.com/a/images/f_jpg,q_auto:eco/61b4738b-e1e1-4786-8f6c-26aa0008e80b/swoosh-logo-black.png",
-        "price": "$140.00",
+        "price": "140.00",
         "img1":"https://jdsports.ca/cdn/shop/products/dh9388400_nike_air_max_motif_1_671x.jpg?v=1664262895",
         "img2":"https://jdsports.ca/cdn/shop/products/dh9388400_nike_air_max_motif_2_671x.jpg?v=1664262894",
         "img3":"https://jdsports.ca/cdn/shop/products/dh9388400_nike_air_max_motif_3_671x.jpg?v=1664262895",
@@ -28,13 +47,15 @@
         "rating":"5",
         "reviews":"5 reviews",
         "tag":"-40%",
-        "id":"1"
+        "id":"2",
+        "color":"blue"
       },
       {
         "name": "NIKE AIR MAX 270 BLACK",
         "brand": "Nike",
+        "gender":"Men",
         "brandImg":"https://static.nike.com/a/images/f_jpg,q_auto:eco/61b4738b-e1e1-4786-8f6c-26aa0008e80b/swoosh-logo-black.png",
-        "price": "$98.00",
+        "price": "98.00",
         "img1":"https://jdsports.ca/cdn/shop/products/FB8037001_nike_air_max_270_gs_1_671x.jpg?v=1670653724",
         "img2":"https://jdsports.ca/cdn/shop/products/FB8037001_nike_air_max_270_gs_2_671x.jpg?v=1670653735",
         "img3":"https://jdsports.ca/cdn/shop/products/FB8037001_nike_air_max_270_gs_3_671x.jpg?v=1670653735",
@@ -43,6 +64,7 @@
         "rating":"4",
         "reviews":"31 reviews",
         "tag":"-10%",
-        "id":"2"
+        "id":"3",
+        "color":"multi"
       }
 ]
