@@ -19,6 +19,7 @@ const Cart = (props) => {
         key={item.id}
         name={item.name}
         gender={item.gender}
+        price={item.price}
       />
     )
   })
