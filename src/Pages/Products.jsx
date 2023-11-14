@@ -141,7 +141,7 @@ const Products = () => {
   }
   //products
   const Products = sneakers.map((clickedItem) =>{
-    const addToCart = (item) =>{
+    const addToCart = () =>{
       dispatch({ type : 'ADD_TO_CART', payload:clickedItem})
       console.log(state.cart);
     };

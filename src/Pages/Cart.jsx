@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react'
 import { AiFillQuestionCircle } from 'react-icons/ai'
 import { Tooltip } from '@chakra-ui/react'
-import HomeProducts from '../Data/HomeProducts.json'
+import SuggestionsProducts from '../Data/Suggestions.json'
 import Product from '../Components/Product'
 import { useStateContext } from '../Contexts/ContextProvider';
 import BagProduct from '../Components/BagProduct'
@@ -23,7 +23,7 @@ const Cart = (props) => {
       />
     )
   })
-  const Products = HomeProducts.map((item) =>{
+  const Products = SuggestionsProducts.map((item) =>{
     return(
       <Product 
         img={item.img1}
@@ -70,11 +70,16 @@ const Cart = (props) => {
           <p className='font-semibold'>Total</p>
           <p>_</p>
         </div>
-        <button className='ml-12 mt-10 w-250 px-20 py-3 bg-zinc-200 rounded-xl text-gray-500 font-semibold'>Chekout</button>
-        <button className='ml-12 mt-3 w-250 px-20 py-3 bg-zinc-200 rounded-xl text-gray-500 font-semibold italic'>
+        {state.cart.length > 0 ? (<button className='ml-12 mt-10 w-250 px-20 py-3 bg-white rounded-xl text-black font-semibold transition hover:bg-transparent '>Chekout</button>
+           ) :<button className='ml-12 mt-10 w-250 px-20 py-3 bg-zinc-200 rounded-xl text-gray-500 font-semibold'>Chekout</button>}
+           {state.cart.length > 0 ? (<button className='ml-12 mt-3 w-250 px-20 py-3 bg-white rounded-xl text-gray-500 font-semibold italic transition hover:bg-transparent'>
           <span className='text-blue-900'>Pay</span>
           <span className='text-cyan-500 font-bold'>Pal</span>
         </button>
+           ) :<button className='ml-12 mt-3 w-250 px-20 py-3 bg-zinc-200 rounded-xl text-gray-500 font-semibold italic'>
+          <span className='text-blue-900'>Pay</span>
+          <span className='text-cyan-500 font-bold'>Pal</span>
+        </button>}
       </div>
     </div>
     <div className='mt-50'>

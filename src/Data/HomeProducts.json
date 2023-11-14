@@ -49,22 +49,5 @@
         "tag":"-40%",
         "id":"2",
         "color":"blue"
-      },
-      {
-        "name": "NIKE AIR MAX 270 BLACK",
-        "brand": "Nike",
-        "gender":"Men",
-        "brandImg":"https://static.nike.com/a/images/f_jpg,q_auto:eco/61b4738b-e1e1-4786-8f6c-26aa0008e80b/swoosh-logo-black.png",
-        "price": "98.00",
-        "img1":"https://jdsports.ca/cdn/shop/products/FB8037001_nike_air_max_270_gs_1_671x.jpg?v=1670653724",
-        "img2":"https://jdsports.ca/cdn/shop/products/FB8037001_nike_air_max_270_gs_2_671x.jpg?v=1670653735",
-        "img3":"https://jdsports.ca/cdn/shop/products/FB8037001_nike_air_max_270_gs_3_671x.jpg?v=1670653735",
-        "img4":"https://jdsports.ca/cdn/shop/products/FB8037001_nike_air_max_270_gs_4_671x.jpg?v=1670653735",
-        "img5":"https://jdsports.ca/cdn/shop/products/FB8037001_nike_air_max_270_gs_5_671x.jpg?v=1670653735",
-        "rating":"4",
-        "reviews":"31 reviews",
-        "tag":"-10%",
-        "id":"3",
-        "color":"multi"
       }
 ]

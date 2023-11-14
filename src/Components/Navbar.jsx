@@ -19,7 +19,7 @@ const Navbar = () => {
     setIsDropDownOpen(!isDropDownOpen);
   };
   //nav cotext state
-  const {handleClick} = useStateContext();
+  const {state} = useStateContext();
   return (
     <nav className='relative flex justify-around p-10 px-0 items-center lg:px-50'>
      <Link to='/'><p className='font-semibold text-xl cursor-pointer'>SHOE<span className='text-orange-500'>UPHORIA</span></p></Link>
@@ -33,8 +33,12 @@ const Navbar = () => {
        <Link to='/cart'>
          <Tooltip label='Cart'>
            <div
-            onClick={()=>handleClick('user')} 
-            className='px-3 pr-8 cursor-pointer'>
+            className='px-3 pr-8 cursor-pointer relative'>
+            {state.cart.length > 0 ? (
+             <span className='absolute text-sm -top-4 left-6 bg-red-600 text-white rounded-full px-1.5'>
+           {state.cart.length}
+          </span>
+           ) : null}
            <FaShoppingBag />
            </div>
          </Tooltip>
@@ -42,7 +46,6 @@ const Navbar = () => {
        <Link to='/user'>
           <Tooltip label='profile'>
             <div 
-             onClick={()=>handleClick('cart')}
              className='cursor-pointer'> 
               <FaUserAlt />
             </div>

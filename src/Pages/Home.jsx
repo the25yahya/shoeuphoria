@@ -10,19 +10,28 @@ import { Button } from '@chakra-ui/react';
 import {GrPowerCycle} from 'react-icons/gr'
 import {SiFsecure} from 'react-icons/si'
 import Review from '../Components/Review';
-import Reviews from '../Data/Reviews.json'
+import Reviews from '../Data/Reviews.json';
+import { useStateContext } from '../Contexts/ContextProvider'
+
+
 
 const Home = () => {
-  const Products = shoes.map((item) =>{
+  const {state,dispatch} = useStateContext();
+  const Products = shoes.map((clickedItem) =>{
+    const addToCart = () =>{
+      dispatch({ type : 'ADD_TO_CART', payload:clickedItem})
+      console.log(state.cart);
+    };
     return(
       <Product 
-        img={item.img1}
-        img2={item.img2}
-        price={item.price}
-        key={item.id}
-        name={item.name}
-        brand={item.brand}
-        tag={item.tag}
+        onClick={addToCart}
+        img={clickedItem.img1}
+        img2={clickedItem.img2}
+        price={clickedItem.price}
+        key={clickedItem.id}
+        name={clickedItem.name}
+        brand={clickedItem.brand}
+        tag={clickedItem.tag}
       />
     )
   })
