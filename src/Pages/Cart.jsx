@@ -4,11 +4,24 @@ import { Tooltip } from '@chakra-ui/react'
 import HomeProducts from '../Data/HomeProducts.json'
 import Product from '../Components/Product'
 import { useStateContext } from '../Contexts/ContextProvider';
+import BagProduct from '../Components/BagProduct'
 
 
 const Cart = (props) => {
   const { cartReducer,cartInitialState, state } = useStateContext();
-  console.log(state);
+  const AddedProducts = state.cart;
+  console.log(AddedProducts.name);
+
+  const CartProducts = AddedProducts.map((item) =>{
+    return(
+      <BagProduct 
+        img1={item.img1}
+        key={item.id}
+        name={item.name}
+        gender={item.gender}
+      />
+    )
+  })
   const Products = HomeProducts.map((item) =>{
     return(
       <Product 
@@ -28,8 +41,13 @@ const Cart = (props) => {
       <div className='bag w-600 flex-col'>
        <div>
        <h2 className='text-3xl'>Bag</h2>
-        <p className='ml-2 mt-2'>There are no items in your bag</p>
        </div>
+       {AddedProducts.length === 0 ? (
+        <p className='ml-2 mt-2'>There are no items in your bag</p>
+      ) : (
+        /* Render other content when the array is not empty */
+       <div>{CartProducts}</div>
+      )}
       </div>
       <div className='pb-5 w-350 summary'>
         <h2 className='text-3xl mb-5'>Summary</h2>

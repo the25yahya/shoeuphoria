@@ -143,7 +143,7 @@ const Products = () => {
   const Products = sneakers.map((item) =>{
     const addToCart = (item) =>{
       dispatch({ type : 'ADD_TO_CART', payload:item})
-      console.log(state);
+      console.log(state.cart);
     };
     return(
       <Product 
