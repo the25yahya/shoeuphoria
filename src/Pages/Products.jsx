@@ -140,21 +140,21 @@ const Products = () => {
     setSortBy(!sortBy)
   }
   //products
-  const Products = sneakers.map((item) =>{
+  const Products = sneakers.map((clickedItem) =>{
     const addToCart = (item) =>{
-      dispatch({ type : 'ADD_TO_CART', payload:item})
+      dispatch({ type : 'ADD_TO_CART', payload:clickedItem})
       console.log(state.cart);
     };
     return(
       <Product 
         onClick={addToCart}
-        img={item.img1}
-        img2={item.img2}
-        price={item.price}
-        key={item.id}
-        name={item.name}
-        brand={item.brand}
-        tag={item.tag}
+        img={clickedItem.img1}
+        img2={clickedItem.img2}
+        price={clickedItem.price}
+        key={clickedItem.id}
+        name={clickedItem.name}
+        brand={clickedItem.brand}
+        tag={clickedItem.tag}
       />
     )
   })
