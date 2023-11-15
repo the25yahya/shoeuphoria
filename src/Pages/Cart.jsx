@@ -58,11 +58,16 @@ const Cart = (props) => {
         <div className='flex-col'>
           <div className='flex items-center justify-between'>
             <p className='flex items-center font-semibold'>subtotal <Tooltip label='The subtotal reflects the total price of your order before any applicable discounts. It does not include shipping costs and taxes.'><span className='cursor-pointer ml-2'><AiFillQuestionCircle/></span></Tooltip></p>
-           <p>{state.subtotal}</p>
+           <p>${state.subtotal}</p>
          </div>
          <div className='flex items-center justify-between mt-4'>
           <p className='font-semibold'>Estimated Shipping & Handling</p>
-          <p>$0.00</p>
+          <p>{state.subtotal > 50 ? (
+        <p>$30.00</p>
+      ) : (
+        /* Render other content when the array is not empty */
+       <p>_</p>
+      )}</p>
          </div>
          <div className='flex items-center justify-between mt-4'>
             <p className='flex items-center font-semibold'>Estimated Tax <Tooltip label='The actual tax will be calculated based on the applicable state and local sales taxes when your order is shipped'><span className='cursor-pointer ml-2'><AiFillQuestionCircle/></span></Tooltip></p>
@@ -71,7 +76,12 @@ const Cart = (props) => {
         </div>
         <div className='flex items-center justify-between mt-7 border-t border-gray-400 pt-5 border-b pb-7'>
           <p className='font-semibold'>Total</p>
-          <p>_</p>
+          {state.subtotal > 50 ? (
+        <p>${state.subtotal + 30}</p>
+      ) : (
+        /* Render other content when the array is not empty */
+       <div>${state.subtotal}</div>
+      )}
         </div>
         {state.cart.length > 0 ? (<button className='ml-12 mt-10 w-250 px-20 py-3 bg-white rounded-xl text-black font-semibold transition hover:bg-transparent '>Chekout</button>
            ) :<button className='ml-12 mt-10 w-250 px-20 py-3 bg-zinc-200 rounded-xl text-gray-500 font-semibold'>Chekout</button>}
