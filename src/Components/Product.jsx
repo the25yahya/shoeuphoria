@@ -17,7 +17,7 @@ const Product = (props) => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
          />
-        <div onClick={props.onClick} className='w-7 h-7 bg-white rounded-full flex p-2 items-center absolute top-64 right-4 cursor-pointer bag'><FaShoppingBag /></div></div>
+        <div onClick={props.onClick} className='w-7 h-7 bg-white rounded-full flex p-2 items-center absolute top-64 right-4 cursor-pointer bag hover:bg-transparent'><FaShoppingBag /></div></div>
          <h2 className='mt-2 font-semibold text-lg'>{props.name}</h2>
          <div className='w-full flex justify-between items-center'>
          <p className='font-bold opacity-60 text-sm my-1'>{props.brand}</p>
