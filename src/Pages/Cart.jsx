@@ -8,9 +8,8 @@ import BagProduct from '../Components/BagProduct'
 
 
 const Cart = (props) => {
-  const { cartReducer,cartInitialState, state,dispatch } = useStateContext();
+  const {  state,dispatch } = useStateContext();
   const AddedProducts = state.cart;
-  console.log(AddedProducts.name);
 
   const CartProducts = AddedProducts.map((item) =>{
     const removeFromCart = () =>{
@@ -59,7 +58,7 @@ const Cart = (props) => {
         <div className='flex-col'>
           <div className='flex items-center justify-between'>
             <p className='flex items-center font-semibold'>subtotal <Tooltip label='The subtotal reflects the total price of your order before any applicable discounts. It does not include shipping costs and taxes.'><span className='cursor-pointer ml-2'><AiFillQuestionCircle/></span></Tooltip></p>
-           <p>_</p>
+           <p>{state.subtotal}</p>
          </div>
          <div className='flex items-center justify-between mt-4'>
           <p className='font-semibold'>Estimated Shipping & Handling</p>

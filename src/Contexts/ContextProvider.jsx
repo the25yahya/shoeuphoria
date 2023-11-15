@@ -37,17 +37,24 @@ export const ContextProvider = ({children}) => {
     const handleClick = (clicked) => {
         setIsClicked({...initialState, [clicked]: true})
       }
-      //cartReducer.js
+      //cartReducer.js  
     const cartReducer = ( state, action )=>{
       switch(action.type){
-        case 'ADD_TO_CART' : 
+        case 'ADD_TO_CART' :{
+        const updatedCart = [...state.cart,action.payload];
+        const updatedSubtotal = updatedCart.reduce((sum,item) =>sum + item.price, 0);
+        console.log(updatedSubtotal);
          return{
-          ...state, cart: [...state.cart,action.payload ]
-         };
-        case 'REMOVE_FROM_CART' :
+          ...state, cart: updatedCart,
+          subtotal : updatedSubtotal,
+         };}
+        case 'REMOVE_FROM_CART' :{
+         const updatedCart = state.cart.filter(item => item.id !== action.payload);
+         const updatedSubtotal = updatedCart.reduce((sum,item) => sum + item.price,0) 
          return{
-          ...state, cart: state.cart.filter(item => item.id !== action.payload)
-         };
+          ...state, cart: state.cart.filter(item => item.id !== action.payload),
+          subtotal: updatedSubtotal,
+         };}
         default :
         return state;
       }
@@ -55,6 +62,7 @@ export const ContextProvider = ({children}) => {
 
     const cartInitialState = {
       cart:[],
+      subtotal:0,
     }
     const [ state, dispatch ] = useReducer(cartReducer,cartInitialState)
 
