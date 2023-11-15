@@ -16,7 +16,7 @@ const BagProduct = (props) => {
       <p className='italic font-semibold'>{props.name}</p>
       <p><span>{props.gender}'s</span> shoes</p>
       <span>Quantity : 1</span>
-      <div className='mt-2 cursor-pointer'>
+      <div onClick={props.onClick} className='mt-2 cursor-pointer'>
       <BsTrash />
      </div>
      </div>

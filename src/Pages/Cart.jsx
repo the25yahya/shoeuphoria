@@ -8,13 +8,17 @@ import BagProduct from '../Components/BagProduct'
 
 
 const Cart = (props) => {
-  const { cartReducer,cartInitialState, state } = useStateContext();
+  const { cartReducer,cartInitialState, state,dispatch } = useStateContext();
   const AddedProducts = state.cart;
   console.log(AddedProducts.name);
 
   const CartProducts = AddedProducts.map((item) =>{
+    const removeFromCart = () =>{
+      dispatch({type:'REMOVE_FROM_CART', payload:item.id })
+    }
     return(
       <BagProduct 
+        onClick={removeFromCart}
         img1={item.img1}
         key={item.id}
         name={item.name}
