@@ -43,7 +43,6 @@ export const ContextProvider = ({children}) => {
         case 'ADD_TO_CART' :{
         const updatedCart = [...state.cart,action.payload];
         const updatedSubtotal = updatedCart.reduce((sum,item) =>sum + item.price, 0);
-        console.log(updatedSubtotal);
          return{
           ...state, cart: updatedCart,
           subtotal : updatedSubtotal,
@@ -65,10 +64,11 @@ export const ContextProvider = ({children}) => {
       subtotal:0,
     }
     const [ state, dispatch ] = useReducer(cartReducer,cartInitialState)
-
+    const [displayedProduct, setDisplayedProduct] = useState(null);
+    const [productDisplay, setProductDisplay] = useState(false);
     return(
         <StateContext.Provider
-          value={{loading,setLoading,isClicked,setIsClicked,handleClick,activeMenu,setActiveMenu,sortBy,setSortBy,gender,price,brands,shoeFeel,bestFor,color,setActiveBestFor,setActiveGender,setActivePrice,setActiveBrands,setActiveShoeFeel,setActiveColor,sneakers,setSneakers,cartReducer,cartInitialState,state,dispatch}}
+          value={{loading,setLoading,isClicked,setIsClicked,handleClick,activeMenu,setActiveMenu,sortBy,setSortBy,gender,price,brands,shoeFeel,bestFor,color,setActiveBestFor,setActiveGender,setActivePrice,setActiveBrands,setActiveShoeFeel,setActiveColor,sneakers,setSneakers,cartReducer,cartInitialState,state,dispatch,displayedProduct,setDisplayedProduct,productDisplay,setProductDisplay}}
         >
             {children}
         </StateContext.Provider>

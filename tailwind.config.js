@@ -8,6 +8,7 @@ export default {
         '128': '15rem',
         '100' : '12rem',
         '50' : '8rem',
+        '30' : '20%'
       },
       transform: {
       
@@ -20,6 +21,8 @@ export default {
         'custom-color5':'#383673',
       },
       width: {
+        1000:'1000px',
+        900:'900px',
         800:"800px",
         700:"700px",
         600:"600px",

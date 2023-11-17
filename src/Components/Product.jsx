@@ -1,6 +1,7 @@
 import {React, useState}from 'react'
 import {FaShoppingBag} from 'react-icons/fa'
 
+
 const Product = (props) => {
   const [imgSrc, setImgSrc] = useState(props.img);
   const handleMouseEnter = () => {
@@ -13,6 +14,7 @@ const Product = (props) => {
     <div className='mb-10 flex-col relative w-300 h-410 mr-5 product'>
         <div className='relative'><img
         className='w-320 cursor-pointer' 
+            onClick={props.onImgClick}
             src={imgSrc}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}

@@ -27,8 +27,13 @@ const Cart = (props) => {
     )
   })
   const Products = SuggestionsProducts.map((item) =>{
+    const addToCart = () =>{
+      dispatch({ type : 'ADD_TO_CART', payload:item})
+      console.log(state.cart);
+    };
     return(
       <Product 
+        onClick={addToCart}
         img={item.img1}
         img2={item.img2}
         price={item.price}
@@ -62,11 +67,11 @@ const Cart = (props) => {
          </div>
          <div className='flex items-center justify-between mt-4'>
           <p className='font-semibold'>Estimated Shipping & Handling</p>
-          <p>{state.subtotal > 50 ? (
+          <p>{state.subtotal < 150 ? (
         <p>$30.00</p>
       ) : (
         /* Render other content when the array is not empty */
-       <p>_</p>
+       <p>$0.00</p>
       )}</p>
          </div>
          <div className='flex items-center justify-between mt-4'>

@@ -4,17 +4,16 @@ import Product from '../Components/Product'
 import {LuSettings2,LuListRestart} from 'react-icons/lu'
 import {AiFillCaretDown} from 'react-icons/ai'
 import {AiFillCaretUp} from 'react-icons/ai'
-import {BiChevronRight,BiChevronLeft} from 'react-icons/bi'
 import { useStateContext } from '../Contexts/ContextProvider'
 import CheckboxExample from '../Components/CheckBox'
 import RotatingBanner from '../Components/Banner'
-import { colorChannel } from '@mui/system'
 import { Tooltip } from '@chakra-ui/react'
-
+import ProductDisplay from '../Components/ProductDisplay'
 
 const Products = () => {
   //context
-  const {activeMenu,setActiveMenu,sortBy,setSortBy,gender,price,brands,shoeFeel,bestFor,color,setActiveBestFor,setActiveGender,setActivePrice,setActiveBrands,setActiveShoeFeel,setActiveColor,sneakers,setSneakers,cartReducer,cartInitialState,state,dispatch} = useStateContext();
+  const {activeMenu,setActiveMenu,sortBy,setSortBy,gender,price,brands,shoeFeel,bestFor,color,setActiveBestFor,setActiveGender,setActivePrice,setActiveBrands,setActiveShoeFeel,setActiveColor,sneakers,setSneakers,cartReducer,cartInitialState,state,dispatch,displayedProduct,setDisplayedProduct,productDisplay,setProductDisplay} = useStateContext();
+  console.log(displayedProduct);
   ////////////filtering sneakers
   const SelectMen = () => {
     const menSneakers = sneakers.filter(product => product.gender === 'Men');
@@ -145,8 +144,13 @@ const Products = () => {
       dispatch({ type : 'ADD_TO_CART', payload:clickedItem})
       console.log(state.cart);
     };
+    const handleDisplayedProduct = () => {
+      setDisplayedProduct(clickedItem);
+      setProductDisplay(true);
+    } 
     return(
-      <Product 
+        <Product
+        onImgClick={handleDisplayedProduct}
         onClick={addToCart}
         img={clickedItem.img1}
         img2={clickedItem.img2}
@@ -156,10 +160,27 @@ const Products = () => {
         brand={clickedItem.brand}
         tag={clickedItem.tag}
       />
+
     )
   })
   return (
     <div className='w-full flex-col fade-in'>
+      {productDisplay ? (
+        <div>
+          <ProductDisplay
+          img1={displayedProduct.img1}
+          img2={displayedProduct.img2}
+          img3={displayedProduct.img3}
+          img4={displayedProduct.img4}
+          img5={displayedProduct.img5}
+          price={displayedProduct.price}
+          brand={displayedProduct.brand}
+          brandImg={displayedProduct.brandImg}
+           />
+        </div>
+      ) : (
+        <div></div>
+      )}
       <RotatingBanner />
       <div className='filter-parent w-full flex items-center justify-between px-12 md:items-start'>
         <h2 className='text-2xl'>All Sneakers (110)</h2>
