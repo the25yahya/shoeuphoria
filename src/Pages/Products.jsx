@@ -13,7 +13,6 @@ import ProductDisplay from '../Components/ProductDisplay'
 const Products = () => {
   //context
   const {activeMenu,setActiveMenu,sortBy,setSortBy,gender,price,brands,shoeFeel,bestFor,color,setActiveBestFor,setActiveGender,setActivePrice,setActiveBrands,setActiveShoeFeel,setActiveColor,sneakers,setSneakers,cartReducer,cartInitialState,state,dispatch,displayedProduct,setDisplayedProduct,productDisplay,setProductDisplay} = useStateContext();
-  console.log(displayedProduct);
   ////////////filtering sneakers
   const SelectMen = () => {
     const menSneakers = sneakers.filter(product => product.gender === 'Men');
@@ -176,12 +175,15 @@ const Products = () => {
           price={displayedProduct.price}
           brand={displayedProduct.brand}
           brandImg={displayedProduct.brandImg}
+          gender={displayedProduct.gender}
+          description={displayedProduct.description}
+          name={displayedProduct.name}
+
            />
         </div>
       ) : (
-        <div></div>
-      )}
-      <RotatingBanner />
+        <div>
+        <RotatingBanner />
       <div className='filter-parent w-full flex items-center justify-between px-12 md:items-start'>
         <h2 className='text-2xl'>All Sneakers (110)</h2>
         <div className='flex items-center mr-5 relative'>
@@ -402,6 +404,9 @@ const Products = () => {
           {Products}
         </div>
       </div>
+        </div>
+      )}
+      
     </div>
   )
 }

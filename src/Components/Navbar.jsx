@@ -19,7 +19,10 @@ const Navbar = () => {
     setIsDropDownOpen(!isDropDownOpen);
   };
   //nav cotext state
-  const {state} = useStateContext();
+  const {state,setProductDisplay} = useStateContext();
+  const ProductDisplayOff = () =>{
+    setProductDisplay(false);
+  }
   return (
     <nav className='relative flex justify-around p-10 px-0 items-center lg:px-50'>
      <Link to='/'><p className='font-semibold text-xl cursor-pointer'>SHOE<span className='text-orange-500'>UPHORIA</span></p></Link>
@@ -27,7 +30,7 @@ const Navbar = () => {
        <Link to='/'><p className='pr-8 hover:text-orange-500 cursor-pointer transition'>Home</p></Link>
        <Link to='/Men'><p className='pr-8 hover:text-orange-500 cursor-pointer transition'>Men</p></Link>
        <Link to='/Women'><p className='pr-8 hover:text-orange-500 cursor-pointer transition'>Women</p></Link>
-       <Link to='/Products'><p className='pr-8 hover:text-orange-500 cursor-pointer transition'>Products</p></Link>
+       <Link to='/Products'><p onClick={ProductDisplayOff} className='pr-8 hover:text-orange-500 cursor-pointer transition'>Products</p></Link>
        <Link to='/Brands'><p className='pr-8 hover:text-orange-500 cursor-pointer transition'>Brands</p></Link>
        <SearchForm />
        <Link to='/cart'>
