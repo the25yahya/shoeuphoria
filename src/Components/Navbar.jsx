@@ -31,7 +31,6 @@ const Navbar = () => {
        <Link to='/Men'><p className='pr-8 hover:text-orange-500 cursor-pointer transition'>Men</p></Link>
        <Link to='/Women'><p className='pr-8 hover:text-orange-500 cursor-pointer transition'>Women</p></Link>
        <Link to='/Products'><p onClick={ProductDisplayOff} className='pr-8 hover:text-orange-500 cursor-pointer transition'>Products</p></Link>
-       <Link to='/Brands'><p className='pr-8 hover:text-orange-500 cursor-pointer transition'>Brands</p></Link>
        <SearchForm />
        <Link to='/cart'>
          <Tooltip label='Cart'>

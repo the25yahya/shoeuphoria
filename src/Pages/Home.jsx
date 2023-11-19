@@ -16,6 +16,11 @@ import { useStateContext } from '../Contexts/ContextProvider'
 
 
 const Home = () => {
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      })}
   const {state,dispatch} = useStateContext();
   const Products = shoes.map((clickedItem) =>{
     const addToCart = () =>{
@@ -132,7 +137,7 @@ const Home = () => {
       </div>
       <div className='w-full h-30 text-center'>
       <Link to='/products'>
-        <button className='border transition text-sm border-black px-5 py-1 rounded-xl hover:border-transparent hover:bg-black hover:text-white cursor-pointer'>See full products</button>
+        <button onClick={scrollToTop} className='border transition text-sm border-black px-5 py-1 rounded-xl hover:border-transparent hover:bg-black hover:text-white cursor-pointer'>See full products</button>
       </Link>
       </div>
     </div>

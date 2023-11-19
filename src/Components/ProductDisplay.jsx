@@ -6,6 +6,9 @@ import { TbLetterX } from "react-icons/tb";
 import { GoDotFill } from "react-icons/go";
 import { BiSolidDislike } from "react-icons/bi";
 import { BiSolidLike } from "react-icons/bi";
+import SizeBtn from './SizeBtn';
+
+
 
 const ProductDisplay = (props) => {
   const {productDisplay,setProductDisplay,displayedProduct} = useStateContext();
@@ -17,10 +20,15 @@ const ProductDisplay = (props) => {
   const handleImageClick = (image) => {
     setSelectedImage(image);
   };
+  //
+  const [selected,setSelected] = useState(false);
+  const handleSelected = () =>{
+    setSelected(!selected);
+  }
   return (
     <div className='flex py-10 px-20'>
       <div className='mr-5'>
-        <p className='text-gray-600 flex items-center'><span onClick={ProductDisplayOff} className='text-lg hover:text-orange-500 transition cursor-pointer'>Products</span> <span className='font-bold mx-2'><GoDotFill/></span> <span>{props.name}</span></p>
+        <p className='text-gray-600 flex items-center'><span onClick={ProductDisplayOff} className='text-lg hover:text-orange-500 transition cursor-pointer'></span> <span className='font-bold mx-2'><GoDotFill/></span> <span>{props.name}</span></p>
         <div className='border mt-5 rounded-lg'><img className='w-600' src={selectedImage}/></div>
         <div className='flex w-500 flex-wrap mt-5'>
           <img onClick={() => handleImageClick(props.img1)} className='w-100 mr-5 cursor-pointer' src={props.img1}/>
@@ -42,15 +50,15 @@ const ProductDisplay = (props) => {
        <div>
           <p><span className='font-semibold text-lg mr-1'>Size.</span> <span>EU</span> <span>{props.gender}</span></p>
          <div className='my-2'>
-           <button className='px-5 py-1 m-2 border-gray-600 rounded-sm border cursor-pointer hover:bg-black hover:text-white transition'>40.5</button>
-           <button className='px-5 py-1 m-2 border-gray-600 rounded-sm border cursor-pointer hover:bg-black hover:text-white transition'>41</button>
-           <button className='px-5 py-1 m-2 border-gray-600 rounded-sm border cursor-pointer hover:bg-black hover:text-white transition'>42</button>
-           <button className='px-5 py-1 m-2 border-gray-600 rounded-sm border cursor-pointer hover:bg-black hover:text-white transition'>43</button>
-           <button className='px-5 py-1 m-2 border-gray-600 rounded-sm border cursor-pointer hover:bg-black hover:text-white transition'>43.5</button>
-           <button className='px-5 py-1 m-2 border-gray-600 rounded-sm border cursor-pointer hover:bg-black hover:text-white transition'>44</button>
-           <button className='px-5 py-1 m-2 border-gray-600 rounded-sm border cursor-pointer hover:bg-black hover:text-white transition'>44.5</button>
-           <button className='px-5 py-1 m-2 border-gray-600 rounded-sm border cursor-pointer hover:bg-black hover:text-white transition'>45</button>
-           <button className='px-5 py-1 m-2 border-gray-600 rounded-sm border cursor-pointer hover:bg-black hover:text-white transition'>46</button>
+           <SizeBtn size="40.5" />
+           <SizeBtn size="41" />
+           <SizeBtn size="42" />
+           <SizeBtn size="43" />
+           <SizeBtn size="43.5" />
+           <SizeBtn size="44" />
+           <SizeBtn size="44.5" />
+           <SizeBtn size="45" />
+           <SizeBtn size="46" />
          </div>
          <p className='text-amber-500 my-2'>Size Guide</p>
        </div>
