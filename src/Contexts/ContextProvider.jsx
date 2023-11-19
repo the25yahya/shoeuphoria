@@ -1,7 +1,8 @@
 import React, {createContext, useContext, useState, useEffect, useReducer} from "react"
 import PropTypes from "prop-types"
 import AllProducts from '../Data/AllProducts.json'
-
+import MenProducts from '../Data/MenProducts.json'
+import WomenProducts from '../Data/womenProducts.json'
 const StateContext = createContext();
 
 
@@ -15,6 +16,8 @@ const initialState = {
 export const ContextProvider = ({children}) => {
 
   const [sneakers, setSneakers] = useState(AllProducts);
+  const [mensneakers, setMenSneakers] = useState(MenProducts);
+  const [womensneakers, setWomenSneakers] = useState(WomenProducts);
   ///////////////////////////////////////////////
     const [loading, setLoading] = useState(true);
 
@@ -68,7 +71,7 @@ export const ContextProvider = ({children}) => {
     const [productDisplay, setProductDisplay] = useState(false);
     return(
         <StateContext.Provider
-          value={{loading,setLoading,isClicked,setIsClicked,handleClick,activeMenu,setActiveMenu,sortBy,setSortBy,gender,price,brands,shoeFeel,bestFor,color,setActiveBestFor,setActiveGender,setActivePrice,setActiveBrands,setActiveShoeFeel,setActiveColor,sneakers,setSneakers,cartReducer,cartInitialState,state,dispatch,displayedProduct,setDisplayedProduct,productDisplay,setProductDisplay}}
+          value={{loading,setLoading,isClicked,setIsClicked,handleClick,activeMenu,setActiveMenu,sortBy,setSortBy,gender,price,brands,shoeFeel,bestFor,color,setActiveBestFor,setActiveGender,setActivePrice,setActiveBrands,setActiveShoeFeel,setActiveColor,sneakers,setSneakers,cartReducer,cartInitialState,state,dispatch,displayedProduct,setDisplayedProduct,productDisplay,setProductDisplay,mensneakers,setMenSneakers,womensneakers,setWomenSneakers}}
         >
             {children}
         </StateContext.Provider>

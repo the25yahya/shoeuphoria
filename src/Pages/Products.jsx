@@ -137,6 +137,9 @@ const Products = () => {
   const toggleSortBy = () =>{
     setSortBy(!sortBy)
   }
+  const addToCart = () =>{
+    dispatch({ type : 'ADD_TO_CART', payload:displayedProduct})
+  };
   //products
   const Products = sneakers.map((clickedItem) =>{
     const addToCart = () =>{
@@ -167,6 +170,7 @@ const Products = () => {
       {productDisplay ? (
         <div>
           <ProductDisplay
+          onClick={addToCart}
           img1={displayedProduct.img1}
           img2={displayedProduct.img2}
           img3={displayedProduct.img3}
