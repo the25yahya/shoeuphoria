@@ -7,7 +7,7 @@ import Loader from './Components/Loader';
 import {Men, Women, Home, Brands, Products, Cart, User} from './Pages/index.jsx'
 import { useStateContext } from './Contexts/ContextProvider';
 import Footer from './Components/Footer';
-import './media.css'
+import './Media.css'
 
 function App() {
   const {loading} = useStateContext();
