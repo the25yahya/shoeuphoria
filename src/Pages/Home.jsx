@@ -54,7 +54,7 @@ const Home = () => {
   return (
    <div className='mt-12 fade-in'>
     <div className='flex justify-center hero'>
-      <div className='mr-20 basis-2/6 hero1'>
+      <div className='basis-2/6 hero1'>
         <h1 className='text-5xl mb-5 intro'><span className='block mb-5'>TRENDY SHOES</span> TO LUXURY</h1>
         <p className='w-400 mb-10 intro2'>Finding your shoe has never been easier. Browse the best selection of famus fashion brand. that suit your style and preferences</p>
         <Link to='/Products'><button className='border bg-black border-transparent px-5 py-2 text-white rounded-lg transition hover:bg-transparent hover:text-black'>Check Now</button></Link>
