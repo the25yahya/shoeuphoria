@@ -3,6 +3,11 @@ import {FaShoppingBag} from 'react-icons/fa'
 
 
 const Product = (props) => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })}
   const [imgSrc, setImgSrc] = useState(props.img);
   const handleMouseEnter = () => {
     setImgSrc(props.img2);
@@ -12,7 +17,7 @@ const Product = (props) => {
   }
   return (
     <div className='mb-10 flex-col relative w-300 h-410 mr-5 product'>
-        <div className='relative'><img
+        <div className='relative' onClick={scrollToTop}><img
         className='w-320 cursor-pointer' 
             onClick={props.onImgClick}
             src={imgSrc}
