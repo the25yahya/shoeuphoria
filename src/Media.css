@@ -40,6 +40,15 @@
     }
   }
   @media screen and (max-width:1100px) {
+    /*product display*/
+    .product-display{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .product-display .div2{
+        margin-left: 100px;
+    }
             /*footer*/
             footer .footer2{
                 flex-direction: column;
@@ -86,6 +95,9 @@
   @media screen and (max-width: 984px){
     .cart .bag{
         width: 400px;
+    }
+    .product-display .div2{
+        margin-left: 80px;
     }
   }
   @media screen and (max-width: 830px) {
@@ -182,6 +194,21 @@
     }
   }
   @media screen and (max-width: 640px){
+    /*product-display*/
+    .product-display .div1{
+        margin: 0px;
+        margin-left: 50px;
+    }
+    .product-display .main-img{
+        width: 400px;
+    }
+    .product-display .div2{
+        margin-left: 20px;
+    }
+    .product-display .div2 .description{
+        width: 450px;
+    }
+    /*===================*/
     .hero .hero1 .intro{
         font-size: 50px;
     }
@@ -253,6 +280,17 @@
   }
 
   @media screen and (max-width: 500px){
+    /*product-display*/
+    .product-display .imgs img{
+        width: 80px;
+    }
+    .product-display .imgs{
+        width: 400px;
+    }
+    .product-display .div1{
+        margin-left: 5px;
+    }
+    /*=====================*/
     .hero .hero1 .intro{
         font-size: 40px;
     }
@@ -298,6 +336,38 @@
             width: 400px;
             height: 200px;
         }
+  }
+  @media screen and (max-width:540px) {
+        /*product-display*/
+        .product-display .div2{
+            margin-left: 30px;
+        }
+        .product-display .div2 .description{
+            width: 340px;
+        }
+        .product-display .to-cart{
+            width: 300px;
+        }
+        /*=====================*/
+  }
+  @media screen and (max-width: 420px){
+        /*product-display*/
+        .product-display .main-img{
+            width: 320px;
+        }
+        .product-display .div2{
+            margin-left: 20px;
+        }
+        .product-display .div2 .description{
+            width: 340px;
+        }
+        .product-display .to-cart{
+            width: 250px;
+        }
+        .product-display .imgs{
+            width: 350px;
+        }
+        /*=====================*/
   }
   @media screen and (max-width: 410px){
     .cart .summary{
