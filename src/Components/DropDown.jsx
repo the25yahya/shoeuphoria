@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const DropDown = (props) => { 
   return (
-    <div className={`slide-right dropdown fixed top-0 w-300 right-0 bg-white p-5 z-20 flex items-start justify-star h-screen shadow-2xl lg:hidden flex-col ${props.isOpen ? '' : 'hidden'}`}>
+    <div className={`slide-right dropdown fixed top-0 w-300 bg-white p-5 z-20 flex items-start justify-star h-screen shadow-2xl lg:hidden flex-col ${props.isOpen ? '' : 'hidden'}`}>
       <div onClick={props.toggleDropDown} className='absolute right-5 text-lg cursor-pointer transition hover:opacity-30'>
        <FaTimes />
       </div>
