@@ -4,7 +4,7 @@ import { BrowserRouter, BrowserRouter as Router, Route, Routes } from 'react-rou
 import { ChakraProvider } from '@chakra-ui/react';
 import Navbar from './Components/Navbar'
 import Loader from './Components/Loader';
-import {Men, Women, Home, Brands, Products, Cart, User} from './pages'
+import {Men, Women, Home, Brands, Products, Cart, User} from './Pages/index.jsx'
 import { useStateContext } from './Contexts/ContextProvider';
 import Footer from './Components/Footer';
 import './media.css'
