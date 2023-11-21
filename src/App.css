@@ -145,6 +145,11 @@
     width: var(--uib-size);
     height: var(--uib-size);
    }
+   @media  screen and (max-width:400px) {
+    .newtons-cradle {
+      left: 40%;
+     }
+   }
    
    .newtons-cradle__dot {
     position: relative;
