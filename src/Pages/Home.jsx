@@ -122,16 +122,6 @@ const Home = () => {
     </div>
     <div className='px-10 pb-0 section5 lg:px-50'>
       <h1 className='text-3xl font-thin mb-5'>Our Products</h1>
-      <div className='flex justify-between items-center'>
-       <div className='flex w-600 items-center'>
-        <p className='mr-5 border border-transparent cursor-pointer text-sm font-semibold
-        hover:border hover:bg-orange-500 hover:text-white hover:rounded-xl px-2 py-1 transition'>All</p>
-        <p className='mr-5 border border-transparent cursor-pointer text-sm font-semibold hover:border hover:bg-orange-500 hover:text-white hover:rounded-xl px-2 py-1 transition'>Sneakers</p>
-        <p className='mr-5 border border-transparent cursor-pointer text-sm font-semibold hover:border hover:bg-orange-500 hover:text-white hover:rounded-xl px-2 py-1 transition'>Sports</p>
-        <p className='mr-5 border border-transparent cursor-pointer text-sm font-semibold hover:border hover:bg-orange-500 hover:text-white hover:rounded-xl px-2 py-1 transition'>Formal</p>
-        <p className='mr-5 border border-transparent cursor-pointer text-sm font-semibold hover:border hover:bg-orange-500 hover:text-white hover:rounded-xl px-2 py-1 transition'>Slip-on</p>
-       </div>
-      </div>
       <div className='flex w-full mt-10 productsHome justify-start'>
         {Products}
       </div>

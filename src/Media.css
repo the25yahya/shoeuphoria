@@ -312,7 +312,7 @@
 
 /*section4===========================*/
         .section4 .banner1{
-            width: 400px;
+            width: 350px;
             height: 250px;
         }
         .section4 .banner1 p{
@@ -326,14 +326,14 @@
             bottom: -50px;
         }
         .section4 .banner2{
-            width: 400px;
+            width: 350px;
             height: 250px;
         }
         .section4 .banner2 h1{
             font-size: 30px;
         }
         .section4 .banner3{
-            width: 400px;
+            width: 350px;
             height: 200px;
         }
   }
@@ -351,6 +351,33 @@
         /*=====================*/
   }
   @media screen and (max-width: 420px){
+    /*section4===========================*/
+    .section4 .banner1{
+        width: 320px;
+        height: 250px;
+    }
+    .section4 .banner1 p{
+        margin-bottom: 10px;
+    }
+    .section4 .banner1 h1{
+        width: 280px;
+    }
+    .section4 .banner1 img{
+        width: 210px;
+        bottom: -50px;
+    }
+    .section4 .banner2{
+        width: 320px;
+        height: 250px;
+    }
+    .section4 .banner2 h1{
+        font-size: 30px;
+    }
+    .section4 .banner3{
+        width: 320px;
+        height: 200px;
+    }
+    /*=================================*/
         /*product-display*/
         .product-display .main-img{
             width: 320px;

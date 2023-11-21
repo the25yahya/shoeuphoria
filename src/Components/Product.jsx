@@ -16,7 +16,7 @@ const Product = (props) => {
     setImgSrc(props.img);
   }
   return (
-    <div className='mb-10 flex-col relative w-300 h-410 mr-5 product'>
+    <div className='my-5 flex-col relative w-300  mr-5 product'>
         <div className='relative' onClick={scrollToTop}><img
         className='w-320 cursor-pointer' 
             onClick={props.onImgClick}

@@ -55,9 +55,9 @@ const Footer = () => {
              <p>Cookies</p>
            </div>
         </div>
-        <div className='flex text-center w-full justify-between items-center section px-0 lg:px-50'>
-            <p className='flex items-center font-semibold'><span className='mr-1'><AiOutlineCopyrightCircle/></span> Unititled UI. All rights reserved.</p>
-            <div className='flex items-center media'>
+        <div className='flex-col px-10 text-center w-full justify-cente items-center section sm:flex'>
+            <p className='flex items-center font-semibold mb-2'><span className='mr-1'><AiOutlineCopyrightCircle/></span> Unititled UI. All rights reserved.</p>
+            <div className='flex items-center media justify-center'>
                 <p><BsTwitter/></p>
                 <p><BsGithub/></p>
                 <p><BsFacebook/></p>
