@@ -19,8 +19,14 @@ const Navbar = () => {
     setIsDropDownOpen(!isDropDownOpen);
   };
   //nav cotext state
-  const {state,setProductDisplay} = useStateContext();
+  const {state,setProductDisplay,setProductDisplayMen,setProductDisplayWomen} = useStateContext();
   const ProductDisplayOff = () =>{
+    setProductDisplay(false);
+  }
+  const ProductDisplayMenOff = () =>{
+    setProductDisplay(false);
+  }
+  const ProductDisplayWomenOff = () =>{
     setProductDisplay(false);
   }
   return (
@@ -28,8 +34,8 @@ const Navbar = () => {
      <Link to='/'><p className='font-semibold text-xl cursor-pointer'>SHOE<span className='text-orange-500'>UPHORIA</span></p></Link>
      <div className='items-center font-semibold hidden lg:flex'>
        <Link to='/'><p className='pr-8 hover:text-orange-500 cursor-pointer transition'>Home</p></Link>
-       <Link to='/Men'><p className='pr-8 hover:text-orange-500 cursor-pointer transition'>Men</p></Link>
-       <Link to='/Women'><p className='pr-8 hover:text-orange-500 cursor-pointer transition'>Women</p></Link>
+       <Link to='/Men'><p onClick={ProductDisplayMenOff} className='pr-8 hover:text-orange-500 cursor-pointer transition'>Men</p></Link>
+       <Link to='/Women'><p onClick={ProductDisplayWomenOff} className='pr-8 hover:text-orange-500 cursor-pointer transition'>Women</p></Link>
        <Link to='/Products'><p onClick={ProductDisplayOff} className='pr-8 hover:text-orange-500 cursor-pointer transition'>Products</p></Link>
        <SearchForm />
        <Link to='/cart'>
