@@ -70,9 +70,11 @@ export const ContextProvider = ({children}) => {
     const [ state, dispatch ] = useReducer(cartReducer,cartInitialState)
     const [displayedProduct, setDisplayedProduct] = useState(null);
     const [productDisplay, setProductDisplay] = useState(false);
+    const [productDisplayMen, setProductDisplayMen] = useState(false);
+    const [productDisplayWomen, setProductDisplayWomen] = useState(false);
     return(
         <StateContext.Provider
-          value={{loading,setLoading,isClicked,setIsClicked,handleClick,activeMenu,setActiveMenu,sortBy,setSortBy,gender,price,brands,shoeFeel,bestFor,color,setActiveBestFor,setActiveGender,setActivePrice,setActiveBrands,setActiveShoeFeel,setActiveColor,sneakers,setSneakers,cartReducer,cartInitialState,state,dispatch,displayedProduct,setDisplayedProduct,productDisplay,setProductDisplay,mensneakers,setMenSneakers,womensneakers,setWomenSneakers,searchTerm,setSearchTerm}}
+          value={{loading,setLoading,isClicked,setIsClicked,handleClick,activeMenu,setActiveMenu,sortBy,setSortBy,gender,price,brands,shoeFeel,bestFor,color,setActiveBestFor,setActiveGender,setActivePrice,setActiveBrands,setActiveShoeFeel,setActiveColor,sneakers,setSneakers,cartReducer,cartInitialState,state,dispatch,displayedProduct,setDisplayedProduct,productDisplay,setProductDisplay,mensneakers,setMenSneakers,womensneakers,setWomenSneakers,searchTerm,setSearchTerm,productDisplayMen,productDisplayWomen,setProductDisplayMen,setProductDisplayWomen}}
         >
             {children}
         </StateContext.Provider>

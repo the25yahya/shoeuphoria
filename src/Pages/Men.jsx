@@ -12,7 +12,7 @@ import ProductDisplay from '../Components/ProductDisplay'
 
 const Men = () => {
   //context
-  const {activeMenu,setActiveMenu,sortBy,setSortBy,gender,price,brands,shoeFeel,bestFor,color,setActiveBestFor,setActiveGender,setActivePrice,setActiveBrands,setActiveShoeFeel,setActiveColor,mensneakers,setMenSneakers,cartReducer,cartInitialState,state,dispatch,displayedProduct,setDisplayedProduct,productDisplay,setProductDisplay} = useStateContext();
+  const {activeMenu,setActiveMenu,sortBy,setSortBy,gender,price,brands,shoeFeel,bestFor,color,setActiveBestFor,setActiveGender,setActivePrice,setActiveBrands,setActiveShoeFeel,setActiveColor,mensneakers,setMenSneakers,cartReducer,cartInitialState,state,dispatch,displayedProduct,setDisplayedProduct,productDisplayMen,setProductDisplayMen} = useStateContext();
   ////////////filtering sneakers
   const SelectNike = () => {
     const womenSneakers = mensneakers.filter(product => product.brand === 'Nike');
@@ -133,7 +133,7 @@ const Men = () => {
     };
     const handleDisplayedProduct = () => {
       setDisplayedProduct(clickedItem);
-      setProductDisplay(true);
+      setProductDisplayMen(true);
     } 
     return(
         <Product
@@ -152,7 +152,7 @@ const Men = () => {
   })
   return (
     <div className='w-full flex-col fade-in'>
-      {productDisplay ? (
+      {productDisplayMen ? (
         <div>
           <ProductDisplay
           onClick={addToCart}
