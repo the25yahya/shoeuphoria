@@ -68,10 +68,10 @@ const Cart = (props) => {
          <div className='flex items-center justify-between mt-4'>
           <p className='font-semibold'>Estimated Shipping & Handling</p>
           <p>{state.subtotal < 150 ? (
-        <p>$0.00</p>
+        <p>$30.00</p>
       ) : (
         /* Render other content when the array is not empty */
-       <p>$30.00</p>
+       <p>$0.00</p>
       )}</p>
          </div>
          <div className='flex items-center justify-between mt-4'>
@@ -82,10 +82,10 @@ const Cart = (props) => {
         <div className='flex items-center justify-between mt-7 border-t border-gray-400 pt-5 border-b pb-7'>
           <p className='font-semibold'>Total</p>
           {state.subtotal < 150 ? (
-        <p>${state.subtotal}</p>
+        <p>${state.subtotal + 30}</p>
       ) : (
         /* Render other content when the array is not empty */
-       <div>${state.subtotal + 30}</div>
+       <div>${state.subtotal}</div>
       )}
         </div>
         {state.cart.length > 0 ? (<button className='ml-12 mt-10 w-250 px-20 py-3 bg-white rounded-xl text-black font-semibold transition hover:bg-transparent '>Chekout</button>
